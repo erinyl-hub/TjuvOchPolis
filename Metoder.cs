@@ -16,13 +16,13 @@ namespace TjuvOchPolis
             {
                 int x;
                 int y;
-                bool Testtest = false;
+                bool loopKey = false;
                 do
                 {
                     x = Random.Shared.Next(0, 101);
                     y = Random.Shared.Next(0, 26);
-                    PositionTest(citizens, x, y);
-                } while (Testtest == false);
+                    loopKey = PositionTest(citizens, x, y);
+                } while (loopKey == false);
 
 
                 string name = names.polisnamn[i];
@@ -38,13 +38,13 @@ namespace TjuvOchPolis
             {
                 int x;
                 int y;
-                bool Testtest = false;
+                bool loopKey = false;
                 do
                 {
                     x = Random.Shared.Next(0, 101);
                     y = Random.Shared.Next(0, 26);
-                    PositionTest(citizens, x, y);
-                } while (Testtest == false);
+                    loopKey = PositionTest(citizens, x, y);
+                } while (loopKey == false);
 
 
                 string name = names.tjuvnamn[i];
@@ -61,13 +61,13 @@ namespace TjuvOchPolis
             {
                 int x;
                 int y;
-                bool Testtest = false;
+                bool loopKey = false;
                 do
                 {
                     x = Random.Shared.Next(0, 101);
                     y = Random.Shared.Next(0, 26);
-                    PositionTest(citizens, x, y);
-                } while (Testtest == false);
+                    loopKey = PositionTest(citizens, x, y);
+                } while (loopKey == false);
 
 
 
@@ -87,13 +87,13 @@ namespace TjuvOchPolis
             {
                 if (person.XPosition == x && person.YPosition == y)
                 {
-                    return true;
+                    return false;
                 }
 
 
 
             }
-            return false;
+            return true;
 
         }
 
