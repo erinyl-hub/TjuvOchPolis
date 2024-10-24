@@ -13,7 +13,7 @@ namespace TjuvOchPolis
         public string Name { get; set; }
         //public List<>| Inventory { get; set; }
         public int Riktning { get; set; }
-
+        //
         public Person(int xposition, int yposition, string name, int riktning)
         {
             XPosition = xposition;
