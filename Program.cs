@@ -11,7 +11,7 @@ namespace TjuvOchPolis
             metoder.AddCitizens(citizens);
 
 
-            //Test för git
+            
 
             //foreach (Person person in citizens)
             //{
