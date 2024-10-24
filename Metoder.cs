@@ -102,6 +102,9 @@ namespace TjuvOchPolis
             foreach (Person person in citizens)
             {
 
+                Console.SetCursorPosition(person.XPosition, person.YPosition);
+                Console.Write(" ");
+
                 Random rand = new Random();
                 int direction = rand.Next(0, 4);
 
@@ -120,12 +123,19 @@ namespace TjuvOchPolis
                         if (person.XPosition < 100) person.XPosition++;
                         break;
                 }
+
+                Console.SetCursorPosition(person.XPosition, person.YPosition);
+                Console.Write(PersonMarkering(person));
             }
 
+        }
 
-
-
-
+        public char PersonMarkering(Person person)
+        {
+            if (person is Polis) return 'P';
+            if (person is Tjuv) return 'T';
+            if (person is Medborgare) return 'C';
+            return ' ';
         }
     }
 }

@@ -7,46 +7,44 @@ namespace TjuvOchPolis
         static void Main(string[] args)
         {
             Metoder metoder = new Metoder();
-            List <Person> citizens = new List <Person> ();
+            List<Person> citizens = new List<Person>();
             metoder.AddCitizens(citizens);
 
-                while (true) 
-                {
-                    Console.Clear(); 
+            TjuvOchPolis.Border();
+            TjuvOchPolis.Bana(citizens);
+            TjuvOchPolis.Border();
 
-                    
-                    TjuvOchPolis.Border();
-                    TjuvOchPolis.Bana(citizens);
-                    TjuvOchPolis.Border();
+            while (true)
+            {
 
-                   
-                    metoder.Rörelse(citizens);
 
-                    
-                    System.Threading.Thread.Sleep(500);
-                }
-          
+                metoder.Rörelse(citizens);
+                System.Threading.Thread.Sleep(250);
+
+
+            }
 
 
 
 
 
-        //foreach (Person person in citizens)
-        //{
-        //    
-        //    if (person is Polis polis)
-        //    {
-        //        Console.WriteLine($"{polis.Name} {polis.XPosition} {polis.YPosition} {polis.Riktning} {polis.Id}");
-        //    }
-        //    else if (person is Tjuv tjuv)
-        //    {
-        //        Console.WriteLine($"{tjuv.Name} {tjuv.XPosition} {tjuv.YPosition} {tjuv.Riktning} {tjuv.Id} {tjuv.Fri}");
-        //    }
-        //    else if (person is Medborgare civilian)
-        //    {
-        //        Console.WriteLine($"{civilian.Name} {civilian.XPosition} {civilian.YPosition} {civilian.Riktning} {civilian.Id}");
-        //    }
-        //}
+
+            //foreach (Person person in citizens)
+            //{
+            //    
+            //    if (person is Polis polis)
+            //    {
+            //        Console.WriteLine($"{polis.Name} {polis.XPosition} {polis.YPosition} {polis.Riktning} {polis.Id}");
+            //    }
+            //    else if (person is Tjuv tjuv)
+            //    {
+            //        Console.WriteLine($"{tjuv.Name} {tjuv.XPosition} {tjuv.YPosition} {tjuv.Riktning} {tjuv.Id} {tjuv.Fri}");
+            //    }
+            //    else if (person is Medborgare civilian)
+            //    {
+            //        Console.WriteLine($"{civilian.Name} {civilian.XPosition} {civilian.YPosition} {civilian.Riktning} {civilian.Id}");
+            //    }
+            //}
 
 
             //TjuvOchPolis.Border();
