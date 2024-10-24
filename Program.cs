@@ -11,7 +11,7 @@ namespace TjuvOchPolis
             metoder.AddCitizens(citizens);
 
 
-            //asfd
+            
 
             //foreach (Person person in citizens)
             //{
