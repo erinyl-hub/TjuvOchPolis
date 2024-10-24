@@ -97,9 +97,39 @@ namespace TjuvOchPolis
 
         }
 
+        public void Rörelse(List<Person> citizens)
+        {
+            foreach (Person person in citizens)
+            {
 
+                Random rand = new Random();
+                int direction = rand.Next(0, 4);
+
+                switch (direction)
+                {
+                    case 0:
+                        if (person.YPosition > 0) person.YPosition--;
+                        break;
+                    case 1:
+                        if (person.YPosition < 24) person.YPosition++;
+                        break;
+                    case 2:
+                        if (person.XPosition > 0) person.XPosition--;
+                        break;
+                    case 3:
+                        if (person.XPosition < 100) person.XPosition++;
+                        break;
+                }
+            }
+
+
+
+
+
+        }
     }
 }
+
 
 
 
