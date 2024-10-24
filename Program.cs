@@ -10,6 +10,9 @@ namespace TjuvOchPolis
             List <Person> citizens = new List <Person> ();
             metoder.AddCitizens(citizens);
 
+
+            //Test för git
+
             //foreach (Person person in citizens)
             //{
             //    
