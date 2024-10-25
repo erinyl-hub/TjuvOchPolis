@@ -13,10 +13,10 @@ namespace TjuvOchPolis
         {
             Name names = new Name();
 
-            
-            AddPersonToList(citizens, 10, names.polisnamn.ToList(), typeof(Polis)); 
-            AddPersonToList(citizens, 20, names.tjuvnamn.ToList(), typeof(Tjuv));   
-            AddPersonToList(citizens, 30, names.medborgarnamn.ToList(), typeof(Medborgare)); 
+
+            AddPersonToList(citizens, 10, names.polisnamn.ToList(), typeof(Polis));
+            AddPersonToList(citizens, 20, names.tjuvnamn.ToList(), typeof(Tjuv));
+            AddPersonToList(citizens, 30, names.medborgarnamn.ToList(), typeof(Medborgare));
         }
 
         public void AddPersonToList(List<Person> citizens, int antal, List<string> namnlista, Type typ)
@@ -70,12 +70,7 @@ namespace TjuvOchPolis
             }
             return true; // Positionen är ledig
         }
-                    return false;
-                }
-            }
-            return true;
 
-        }
 
         public void Rörelse(List<Person> citizens)
         {
@@ -134,20 +129,22 @@ namespace TjuvOchPolis
             }
 
 
-        public char PersonMarkering(Person person)
-        {
-            if (person is Polis) return 'P';
+            public char PersonMarkering(Person person)
+            {
+                if (person is Polis) return 'P';
 
 
-            if (person is Tjuv) return 'T';
+                if (person is Tjuv) return 'T';
 
 
-            if (person is Medborgare) return 'C';
+                if (person is Medborgare) return 'C';
 
-            return ' ';
+                return ' ';
+            }
         }
     }
 }
+
 
 
 
