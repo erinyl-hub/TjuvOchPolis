@@ -7,11 +7,27 @@ namespace TjuvOchPolis
         static void Main(string[] args)
         {
             Metoder metoder = new Metoder();
-            List <Person> citizens = new List <Person> ();
+            List<Person> citizens = new List<Person>();
             metoder.AddCitizens(citizens);
 
+            TjuvOchPolis.Border();
+            TjuvOchPolis.Bana(citizens);
+            TjuvOchPolis.Border();
 
-            
+            while (true)
+            {
+
+
+                metoder.Rörelse(citizens);
+                System.Threading.Thread.Sleep(200);
+
+
+            }
+
+
+
+
+
 
             //foreach (Person person in citizens)
             //{
@@ -31,11 +47,11 @@ namespace TjuvOchPolis
             //}
 
 
-            TjuvOchPolis.Border();
-            TjuvOchPolis.Bana(citizens);
-            TjuvOchPolis.Border();
+            //TjuvOchPolis.Border();
+            //TjuvOchPolis.Bana(citizens);
+            //TjuvOchPolis.Border();
 
-            Console.ReadKey();
+            //Console.ReadKey();
         }
     }
 }
