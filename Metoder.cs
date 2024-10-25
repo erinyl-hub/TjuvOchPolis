@@ -19,8 +19,8 @@ namespace TjuvOchPolis
                 bool loopKey = false;
                 do
                 {
-                    x = Random.Shared.Next(0, 101);
-                    y = Random.Shared.Next(0, 26);
+                    x = Random.Shared.Next(1, 101);
+                    y = Random.Shared.Next(1, 26);
                     loopKey = PositionTest(citizens, x, y);
                 } while (loopKey == false);
 
@@ -41,8 +41,8 @@ namespace TjuvOchPolis
                 bool loopKey = false;
                 do
                 {
-                    x = Random.Shared.Next(0, 101);
-                    y = Random.Shared.Next(0, 26);
+                    x = Random.Shared.Next(1, 10);
+                    y = Random.Shared.Next(1, 26);
                     loopKey = PositionTest(citizens, x, y);
                 } while (loopKey == false);
 
@@ -64,8 +64,8 @@ namespace TjuvOchPolis
                 bool loopKey = false;
                 do
                 {
-                    x = Random.Shared.Next(0, 101);
-                    y = Random.Shared.Next(0, 26);
+                    x = Random.Shared.Next(1, 101);
+                    y = Random.Shared.Next(1, 26);
                     loopKey = PositionTest(citizens, x, y);
                 } while (loopKey == false);
 
@@ -89,9 +89,6 @@ namespace TjuvOchPolis
                 {
                     return false;
                 }
-
-
-
             }
             return true;
 
@@ -105,24 +102,49 @@ namespace TjuvOchPolis
                 Console.SetCursorPosition(person.XPosition, person.YPosition);
                 Console.Write(" ");
 
-                Random rand = new Random();
-                int direction = rand.Next(0, 4);
+
+                int direction = person.Riktning;
 
                 switch (direction)
                 {
                     case 0:
-                        if (person.YPosition > 0) person.YPosition--;
+                        if (person.YPosition > 1 && person.XPosition < 100)
+                            person.YPosition--;
                         break;
+
                     case 1:
-                        if (person.YPosition < 24) person.YPosition++;
+                        if (person.YPosition < 25) person.YPosition++;
                         break;
+
                     case 2:
-                        if (person.XPosition > 0) person.XPosition--;
+                        if (person.XPosition > 1) person.XPosition--;
                         break;
+
                     case 3:
                         if (person.XPosition < 100) person.XPosition++;
                         break;
+
+                    case 4:
+                        if (person.YPosition > 1 && person.XPosition > 1) // flyttar vänster uppåt
+                        { person.YPosition--; person.XPosition--; };
+                        break;
+
+                    case 5:
+                        if (person.YPosition < 25 && person.XPosition < 100) // flyttar höger neråt
+                        { person.YPosition++; person.XPosition++; };
+                        break;
+
+                    case 6:
+                        if (person.YPosition > 1 && person.XPosition < 100) // flyttar höger uppåt
+                        { person.YPosition--; person.XPosition++; };
+                        break;
+
+                    case 7:
+                        if (person.YPosition < 25 && person.XPosition > 1) // flyttar vänster neråt
+                        { person.YPosition++; person.XPosition--; };
+                        break;
                 }
+
 
                 Console.SetCursorPosition(person.XPosition, person.YPosition);
                 Console.Write(PersonMarkering(person));
@@ -133,8 +155,13 @@ namespace TjuvOchPolis
         public char PersonMarkering(Person person)
         {
             if (person is Polis) return 'P';
+
+
             if (person is Tjuv) return 'T';
+
+
             if (person is Medborgare) return 'C';
+
             return ' ';
         }
     }

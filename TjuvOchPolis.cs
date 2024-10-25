@@ -32,36 +32,37 @@ namespace TjuvOchPolis
                 for (int f = 0; f < x; f++)
                 {
                     bool inneBana = false;
-                    foreach (Person person in citizens)
-                    {
+                    //foreach (Person person in citizens)
+                    //{
 
-                        if (person.XPosition == f && person.YPosition == z)
-                        {
-                            inneBana = true;
+                    //    if (person.XPosition == f && person.YPosition == z)
+                    //    {
+                    //        inneBana = true;
 
-                            if (person is Polis polis)
-                            {
-                                Console.Write(polis.Id);
-                            }
-                            else if (person is Tjuv tjuv)
-                            {
-                                Console.Write(tjuv.Id);
-                            }
-                            else if (person is Medborgare civilian)
-                            {
-                                Console.Write(civilian.Id);
-                            }
-                            
-                            
-                        }
-                        
-                        
+                    //        if (person is Polis polis)
+                    //        {
+                    //            Console.Write(polis.Id);
+                    //        }
+                    //        else if (person is Tjuv tjuv)
+                    //        {
+                    //            Console.Write(tjuv.Id);
+                    //        }
+                    //        else if (person is Medborgare civilian)
+                    //        {
+                    //            Console.Write(civilian.Id);
+                    //        }
 
-                    } 
+
+                    //    }
+
+
+
+                    //}
                     if (inneBana == false)
                     {
                         Console.Write(" ");
                     }
+                    
 
                     
                 }
