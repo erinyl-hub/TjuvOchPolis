@@ -124,24 +124,45 @@ namespace TjuvOchPolis
                 }
 
 
+                if (person is Polis)
+                {
+                    Console.ForegroundColor = ConsoleColor.Blue;  // har färgen kvar när den loopar
+                }
+                else if (person is Tjuv)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                }
+                else if (person is Medborgare)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                }
+
+
                 Console.SetCursorPosition(person.XPosition, person.YPosition);
                 Console.Write(PersonMarkering(person));
+
+
+
+
+
+
             }
 
-
-            public char PersonMarkering(Person person)
-            {
-                if (person is Polis) return 'P';
-
-
-                if (person is Tjuv) return 'T';
-
-
-                if (person is Medborgare) return 'C';
-
-                return ' ';
-            }
         }
+
+        public char PersonMarkering(Person person)
+        {
+            if (person is Polis) return 'P';
+
+
+            else if (person is Tjuv) return 'T';
+
+
+            else if (person is Medborgare) return 'C';
+
+            return ' ';
+        }
+
     }
 }
 
