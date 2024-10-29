@@ -13,10 +13,10 @@ namespace TjuvOchPolis
 
             for (int i = 0; i < citizens.Count; i++)
             {
-                for(int j = 0; j < citizens.Count; j++)
+                for (int j = 0; j < citizens.Count; j++)
                 {
-                    if (i == j)  break; // inte möter sig själv
-                    
+                    if (i == j) break; // inte möter sig själv
+
 
                     Person person = citizens[i];
                     Person personMeeting = citizens[j];
@@ -29,23 +29,22 @@ namespace TjuvOchPolis
 
                         if (typ == typeof(Medborgare) && typMeeting == typeof(Tjuv))
                         {
-                            Console.Clear();
-                            Console.WriteLine("Funkar");
-                            Console.ReadKey();
+                            Tjuv thief = (Tjuv)personMeeting;
+                            Medborgare citizen = (Medborgare)person;
+                            MoveItems.ThiefCitizenItems(thief, citizen);
+
                         }
 
-                        if (typ == typeof(Polis) && typMeeting == typeof(Tjuv))
+                        else if (typ == typeof(Tjuv) && typMeeting == typeof(Polis))
                         {
-                            Console.Clear();
-                            Console.WriteLine("Funkar");
-                            Console.ReadKey();
+                            Tjuv thief = (Tjuv)person;
+                            Polis polis = (Polis)personMeeting;
+                            MoveItems.PoliceThiefItems(thief, polis);
                         }
 
                         if (typ == typeof(Polis) && typMeeting == typeof(Polis))
                         {
-                            Console.Clear();
-                            Console.WriteLine("Funkar");
-                            Console.ReadKey();
+
                         }
 
                     }

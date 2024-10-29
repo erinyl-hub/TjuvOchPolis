@@ -19,7 +19,7 @@ namespace TjuvOchPolis
 
 
                 metoder.Rörelse(citizens);
-                System.Threading.Thread.Sleep(200);
+                System.Threading.Thread.Sleep(1);
 
 
             }

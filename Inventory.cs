@@ -20,6 +20,7 @@ namespace TjuvOchPolis
             Money = money;
             Watch = watch;          
         }
+        
 
 
     }
