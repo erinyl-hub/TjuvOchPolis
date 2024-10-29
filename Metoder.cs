@@ -76,6 +76,8 @@ namespace TjuvOchPolis
         {
             Random rand = new Random();
 
+            Meeting.PersonMeeting(citizens);
+
             foreach (Person person in citizens)
             {
                 
