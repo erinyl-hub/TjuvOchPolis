@@ -41,17 +41,20 @@ namespace TjuvOchPolis
                 
                 if (typ == typeof(Polis))
                 {
-                    Polis polis = new Polis(x, y, name, movement);
+                    Inventory inventory = new Inventory(0, 0, 0, 0);
+                    Polis polis = new Polis(inventory,x, y, name, movement);
                     citizens.Add(polis);
                 }
                 else if (typ == typeof(Tjuv))
                 {
-                    Tjuv tjuv = new Tjuv(x, y, name, movement, true);
+                    Inventory inventory = new Inventory(0, 0, 0, 0);
+                    Tjuv tjuv = new Tjuv(inventory, x, y, name, movement, true);
                     citizens.Add(tjuv);
                 }
                 else if (typ == typeof(Medborgare))
                 {
-                    Medborgare civilian = new Medborgare(x, y, name, movement);
+                    Inventory inventory = new Inventory(1, 1, 1, 1);
+                    Medborgare civilian = new Medborgare(inventory, x, y, name, movement);
                     citizens.Add(civilian);
                 }
             }

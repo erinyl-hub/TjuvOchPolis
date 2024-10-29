@@ -27,14 +27,12 @@ namespace TjuvOchPolis
 
 
     internal class Polis : Person
-    {
-        public char Id { get; } = 'P';
-        
+    {       
+        public Inventory SeizedGoods { get; set; }
 
-        public Polis(int xposition, int yposition, string name, int riktning) : base (xposition, yposition, name, riktning)
+        public Polis(Inventory seizedGoods, int xposition, int yposition, string name, int riktning) : base (xposition, yposition, name, riktning)
         {
-
-          
+            SeizedGoods = seizedGoods;        
         }
 
     }
@@ -43,12 +41,11 @@ namespace TjuvOchPolis
 
     internal class Medborgare : Person
     {
-        public char Id { get; } = 'C';
+        public Inventory Belongings { get; set; }
 
-        public Medborgare(int xposition, int yposition, string name, int riktning) : base(xposition, yposition, name, riktning)
-        {
-           
-
+        public Medborgare(Inventory belongings, int xposition, int yposition, string name, int riktning) : base(xposition, yposition, name, riktning)
+        {          
+            Belongings = belongings;
         }
 
     }
@@ -56,14 +53,13 @@ namespace TjuvOchPolis
 
     internal class Tjuv : Person
     {
-        public char Id { get; } = 'T';
         public bool Fri { get; set; }
+        public Inventory StolenGoods { get; set; }
 
-        public Tjuv(int xposition, int yposition, string name, int riktning, bool fri) : base(xposition, yposition, name, riktning)
+        public Tjuv(Inventory stolenGoods, int xposition, int yposition, string name, int riktning, bool fri) : base(xposition, yposition, name, riktning)
         {
-            
+            StolenGoods= stolenGoods;
             Fri = fri;
-
         }
 
     }
