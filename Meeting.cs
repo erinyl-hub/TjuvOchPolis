@@ -10,13 +10,11 @@ namespace TjuvOchPolis
     {
         public static void PersonMeeting(List<Person> citizens) // static
         {
-
             for (int i = 0; i < citizens.Count; i++)
             {
                 for (int j = 0; j < citizens.Count; j++)
                 {
                     if (i == j) break; // inte möter sig själv
-
 
                     Person person = citizens[i];
                     Person personMeeting = citizens[j];
@@ -46,31 +44,9 @@ namespace TjuvOchPolis
                         {
 
                         }
-
                     }
-
-
-
-                    //Type typ = person.GetType();
-                    //Type typMeeting = personMeeting.GetType();
-
-                    //if (typ == typeof(Medborgare) && typMeeting == typeof(Tjuv))
-                    //{
-                    //    Console.Clear();
-                    //    Console.WriteLine("Funkar");
-                    //    Console.ReadKey();
-                    //}
-
-
-
-
-
                 }
             }
-
-
         }
-
-
     }
 }

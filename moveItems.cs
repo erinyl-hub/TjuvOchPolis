@@ -21,60 +21,50 @@ namespace TjuvOchPolis
                     {
                         medborgare.Belongings.Key--;
                         tjuv.StolenGoods.Key++;
-                        Console.WriteLine($"{tjuv.Name} stal en nyckel ifrån {medborgare.Name}");
                     }
                     break;
                 case 1:
                     if (medborgare.Belongings.Mobil > 0)
                     {
                         medborgare.Belongings.Mobil--;
-                        tjuv.StolenGoods.Mobil++;
-                        Console.WriteLine($"{tjuv.Name} stal en mobil ifrån {medborgare.Name}");
+                        tjuv.StolenGoods.Mobil++;                       
                     }
                     break;
                 case 2:
                     if (medborgare.Belongings.Money > 0)
                     {
                         medborgare.Belongings.Money--;
-                        tjuv.StolenGoods.Money++;
-                        Console.WriteLine($"{tjuv.Name} stal pengar ifrån {medborgare.Name}");
+                        tjuv.StolenGoods.Money++;                    
                     }
                     break;
                 case 3:
                     if (medborgare.Belongings.Watch > 0)
                     {
                         medborgare.Belongings.Watch--;
-                        tjuv.StolenGoods.Watch++;
-                        Console.WriteLine($"{tjuv.Name} stal en klocka ifrån {medborgare.Name}");
+                        tjuv.StolenGoods.Watch++;                       
                     }
                     break;
 
-
                 default:
+
                     break;
-
-
-
             }
-
-
-
         }
 
         
         public static void PoliceThiefItems(Tjuv tjuv, Polis polis)
-        {
-            
+        {           
             if (tjuv.StolenGoods.Key > 0 || tjuv.StolenGoods.Watch > 0 || tjuv.StolenGoods.Money > 0 || tjuv.StolenGoods.Mobil > 0)
-            {
-                int key = tjuv.StolenGoods.Key;
-                int watch = tjuv.StolenGoods.Watch;
-                int money = tjuv.StolenGoods.Money;
-                int mobil = tjuv.StolenGoods.Mobil;
-                polis.SeizedGoods.Key += key;
-                polis.SeizedGoods.Mobil += mobil;
-                polis.SeizedGoods.Money += money;
-                polis.SeizedGoods.Watch += watch;
+            {               
+                polis.SeizedGoods.Key += tjuv.StolenGoods.Key;
+                polis.SeizedGoods.Mobil += tjuv.StolenGoods.Mobil;
+                polis.SeizedGoods.Money += tjuv.StolenGoods.Money;
+                polis.SeizedGoods.Watch += tjuv.StolenGoods.Watch;
+
+                tjuv.StolenGoods.Key = 0; // Skriva om så det blir snyggare?
+                tjuv.StolenGoods.Mobil = 0;
+                tjuv.StolenGoods.Money = 0;
+                tjuv.StolenGoods.Watch = 0;
                 tjuv.Fri = false;
             }
             return;

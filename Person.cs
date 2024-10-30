@@ -13,7 +13,6 @@ namespace TjuvOchPolis
         public string Name { get; set; }
         //public List<>| Inventory { get; set; }
         public int Riktning { get; set; }
-
         public Person(int xposition, int yposition, string name, int riktning)
         {
             XPosition = xposition;
@@ -23,8 +22,6 @@ namespace TjuvOchPolis
 
         }
     }
-
-
 
     internal class Polis : Person
     {       
@@ -37,8 +34,6 @@ namespace TjuvOchPolis
 
     }
 
-
-
     internal class Medborgare : Person
     {
         public Inventory Belongings { get; set; }
@@ -49,7 +44,6 @@ namespace TjuvOchPolis
         }
 
     }
-
 
     internal class Tjuv : Person
     {
