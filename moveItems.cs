@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -10,7 +11,7 @@ namespace TjuvOchPolis
     internal class MoveItems
     {
 
-        public static void ThiefCitizenItems(Tjuv tjuv, Medborgare medborgare)
+        public static void ThiefCitizenItems(Tjuv tjuv, Medborgare medborgare, List<string> messages)
         {
             int rnd = Random.Shared.Next(0, 4);
 
@@ -19,29 +20,37 @@ namespace TjuvOchPolis
                 case 0:
                   if (medborgare.Belongings.Key > 0)
                     {
+                        string goods = "nyckel";
                         medborgare.Belongings.Key--;
                         tjuv.StolenGoods.Key++;
+                        NewsFeed.AddMessages(messages,tjuv, medborgare, goods);
                     }
                     break;
                 case 1:
                     if (medborgare.Belongings.Mobil > 0)
                     {
+                        string goods = "mobil";
                         medborgare.Belongings.Mobil--;
-                        tjuv.StolenGoods.Mobil++;                       
+                        tjuv.StolenGoods.Mobil++;
+                        NewsFeed.AddMessages(messages, tjuv, medborgare, goods);
                     }
                     break;
                 case 2:
                     if (medborgare.Belongings.Money > 0)
                     {
+                        string goods = "plånbok";
                         medborgare.Belongings.Money--;
-                        tjuv.StolenGoods.Money++;                    
+                        tjuv.StolenGoods.Money++;
+                        NewsFeed.AddMessages(messages, tjuv, medborgare, goods);
                     }
                     break;
                 case 3:
                     if (medborgare.Belongings.Watch > 0)
                     {
+                        string goods = "klocka";
                         medborgare.Belongings.Watch--;
-                        tjuv.StolenGoods.Watch++;                       
+                        tjuv.StolenGoods.Watch++;
+                        NewsFeed.AddMessages(messages, tjuv, medborgare, goods);
                     }
                     break;
 

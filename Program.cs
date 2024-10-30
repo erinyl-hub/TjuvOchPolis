@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel;
+using System.Collections.Generic;
+using System.Collections;
 
 namespace TjuvOchPolis
 {
@@ -8,6 +10,7 @@ namespace TjuvOchPolis
         {         
             List<Person> citizens = new List<Person>();
             CreateCitizens.AddCitizens(citizens);
+            List<string> messages = new List<string>();
 
             BuildCity.Border();
             BuildCity.Bana();
@@ -15,9 +18,11 @@ namespace TjuvOchPolis
 
             while (true)
             {
-                Movment.Rörelse(citizens);
-                System.Threading.Thread.Sleep(1);
-                //Skriva ut nyheter
+                
+                Movment.Rörelse(citizens, messages);
+                System.Threading.Thread.Sleep(250);
+                NewsFeed.WriteMessages(messages);
+                
             }
          
         }

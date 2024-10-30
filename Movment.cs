@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,10 @@ namespace TjuvOchPolis
 {
     internal class Movment
     {
-        public static void Rörelse(List<Person> citizens)
+        public static void Rörelse(List<Person> citizens, List<string> messages)
         {
 
-            Meeting.PersonMeeting(citizens);
+            Meeting.PersonMeeting(citizens, messages);
 
             foreach (Person person in citizens)
             {

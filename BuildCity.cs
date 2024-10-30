@@ -17,7 +17,7 @@ namespace TjuvOchPolis
                 Console.Write("x");
             }
         }
-        public static void Bana(List<Person> citizens)
+        public static void Bana()
         {
             int x = 100;
             int y = 25;

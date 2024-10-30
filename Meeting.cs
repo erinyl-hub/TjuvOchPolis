@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace TjuvOchPolis
 {
     internal class Meeting
     {
-        public static void PersonMeeting(List<Person> citizens) // static
+        public static void PersonMeeting(List<Person> citizens, List<string> messages) // static
         {
             for (int i = 0; i < citizens.Count; i++)
             {
@@ -29,7 +30,7 @@ namespace TjuvOchPolis
                         {
                             Tjuv thief = (Tjuv)personMeeting;
                             Medborgare citizen = (Medborgare)person;
-                            MoveItems.ThiefCitizenItems(thief, citizen);
+                            MoveItems.ThiefCitizenItems(thief, citizen, messages);
 
                         }
 
