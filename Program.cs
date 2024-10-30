@@ -10,13 +10,14 @@ namespace TjuvOchPolis
             CreateCitizens.AddCitizens(citizens);
 
             BuildCity.Border();
-            BuildCity.Bana(citizens);
+            BuildCity.Bana();
             BuildCity.Border();
 
             while (true)
             {
                 Movment.Rörelse(citizens);
                 System.Threading.Thread.Sleep(1);
+                //Skriva ut nyheter
             }
          
         }
