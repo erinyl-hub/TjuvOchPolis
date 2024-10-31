@@ -11,25 +11,40 @@ namespace TjuvOchPolis
         public static void BuildPrisonBorder()
         {
             Console.Write("   ");
-
-            for (int i = 0; i < 22; i++)
+            Console.Write("╔");
+            for (int i = 0; i < 21; i++)
             {
                 
-                Console.Write("X");
+                Console.Write("=");
 
             }
+            Console.Write("╗");
+
+        }
+
+        public static void BuildPrisonBottom()
+        {
+            Console.Write("   ");
+            Console.Write("╚");
+            for (int i = 0; i < 21; i++)
+            {
+
+                Console.Write("=");
+
+            }
+            Console.Write("╝");
 
         }
 
         public static void BuildPrisonWalls()
 
         {
-            Console.Write("   X");
-            for (int i = 0; i < 20; i++) 
+            Console.Write("   ║");
+            for (int i = 0; i < 21; i++) 
             {
                Console.Write(" ");
             }
-            Console.Write("X");
+            Console.Write("║");
         }
     }
 }

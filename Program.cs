@@ -19,9 +19,9 @@ namespace TjuvOchPolis
 
             BuildCity.Border();
             BuildCity.Bana();
-            BuildCity.Border();
+            BuildCity.BottomBorder();
 
-            
+           
             NewsFeed.NewsFeedMap();
             NewsFeed.NewsFeedBorder();
 

@@ -11,15 +11,24 @@ namespace TjuvOchPolis
         public static void Border()
         {
 
-            int x = 102;
-
+            int x = 100;
+            Console.Write("╔");
             for (int i = 0; i < x; i++)
             {
-                Console.Write("x"); //Taket och golvet av banan
+                Console.Write("="); 
             }
+            Console.Write("╗");
+        }
 
-            
-
+        public static void BottomBorder()
+        {
+            int x = 100;
+            Console.Write("╚");
+            for (int i = 0; i < x; i++)
+            {
+                Console.Write("="); 
+            }
+            Console.WriteLine("╝"); 
         }
 
 
@@ -34,7 +43,7 @@ namespace TjuvOchPolis
 
             for (int z = 0; z < y; z++)
             {
-                Console.Write("x"); //Vänster vägg av banan
+                Console.Write("║"); //Vänster vägg av banan
 
                 for (int f = 0; f < x; f++)
                 {
@@ -42,7 +51,7 @@ namespace TjuvOchPolis
 
                 }
 
-                Console.Write("x"); //Höger vägg av banan
+                Console.Write("║"); //Höger vägg av banan
 
                 if (z < 15 )
                 {
@@ -53,7 +62,7 @@ namespace TjuvOchPolis
                 if (z == 15 )
 
                 {
-                    BuildPrison.BuildPrisonBorder();
+                    BuildPrison.BuildPrisonBottom();
                 }
 
 
