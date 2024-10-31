@@ -12,6 +12,11 @@ namespace TjuvOchPolis
             CreateCitizens.AddCitizens(citizens);
             List<string> messages = new List<string>();
 
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+
             BuildCity.Border();
             BuildCity.Bana();
             BuildCity.Border();
@@ -22,9 +27,9 @@ namespace TjuvOchPolis
 
             while (true)
             {
-                
+
                 Movment.Rörelse(citizens, messages);
-                System.Threading.Thread.Sleep(250);
+                System.Threading.Thread.Sleep(200);
                 NewsFeed.WriteMessages(messages);
                 
             }

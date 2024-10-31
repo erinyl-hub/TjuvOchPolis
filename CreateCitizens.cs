@@ -31,7 +31,7 @@ namespace TjuvOchPolis
                 do
                 {
                     x = Random.Shared.Next(1, 101);
-                    y = Random.Shared.Next(1, 26);
+                    y = Random.Shared.Next(5, 30);
 
                     //Kallar metoden PositionTest för att kontrollera om den slumpmässiga positionen redan är upptagen av en annan medborgare.
                     loopKey = PositionTest(citizens, x, y);

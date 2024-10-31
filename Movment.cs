@@ -58,10 +58,10 @@ namespace TjuvOchPolis
             else if (x >= 100)
                 tillåtnaRiktningar = new List<int> { 2, 4, 7 };
 
-            else if (y <= 1)
+            else if (y <= 5)  //ändra
                 tillåtnaRiktningar = new List<int> { 1, 5, 7 };
 
-            else if (y >= 25)
+            else if (y >= 29) //ändra
                 tillåtnaRiktningar = new List<int> { 0, 4, 6 };
 
             return tillåtnaRiktningar;
@@ -88,14 +88,14 @@ namespace TjuvOchPolis
 
             switch (person.Riktning)
             {
-                case 0: if (person.YPosition > 1) person.YPosition--; break;
-                case 1: if (person.YPosition < 25) person.YPosition++; break;
+                case 0: if (person.YPosition > 5) person.YPosition--; break;
+                case 1: if (person.YPosition < 30) person.YPosition++; break;
                 case 2: if (person.XPosition > 1) person.XPosition--; break;
                 case 3: if (person.XPosition < 100) person.XPosition++; break;
-                case 4: if (person.YPosition > 1 && person.XPosition > 1) { person.YPosition--; person.XPosition--; } break;
-                case 5: if (person.YPosition < 25 && person.XPosition < 100) { person.YPosition++; person.XPosition++; } break;
-                case 6: if (person.YPosition > 1 && person.XPosition < 100) { person.YPosition--; person.XPosition++; } break;
-                case 7: if (person.YPosition < 25 && person.XPosition > 1) { person.YPosition++; person.XPosition--; } break;
+                case 4: if (person.YPosition > 5 && person.XPosition > 1) { person.YPosition--; person.XPosition--; } break;
+                case 5: if (person.YPosition < 30 && person.XPosition < 100) { person.YPosition++; person.XPosition++; } break;
+                case 6: if (person.YPosition > 5 && person.XPosition < 100) { person.YPosition--; person.XPosition++; } break;
+                case 7: if (person.YPosition < 30 && person.XPosition > 1) { person.YPosition++; person.XPosition--; } break;
             }
         }
 
