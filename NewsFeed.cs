@@ -30,17 +30,17 @@ namespace TjuvOchPolis
 
 
             int startIndex = Math.Max(messages.Count - 5, 0);
-            int yPosition = 27;
+            int yPosition = 33;
             int messageWidth = 60;
 
-            
+
             for (int i = 0; i < 5; i++)
             {
                 Console.SetCursorPosition(23, yPosition + i);
                 Console.Write(new string(' ', messageWidth));
             }
 
-            
+
             for (int i = messages.Count - 1; i >= startIndex; i--)
             {
                 Console.SetCursorPosition(23, yPosition);
@@ -50,31 +50,47 @@ namespace TjuvOchPolis
 
             }
         }
+
+
+        
+
         public static void NewsFeedBorder()
         {
             int x = 72;
             int StartOffset = 14;
+            int yPosition = 31;
+
+            Console.SetCursorPosition(44, yPosition);
+            Console.WriteLine("NewsFeed");
+
+
 
             Console.Write(new string(' ', StartOffset));
             for (int i = 0; i < x; i++)
             {
 
-                Console.Write("x");
+                Console.Write("=");
+                
             }
+            
+
 
 
         }
 
+
+
+
         public static void NewsFeedMap()
         {
             int x = 70;
-            int y = 5;
+            int y = 7;
 
             Console.WriteLine();
             for (int z = 0; z < y; z++)
             {
-                Console.Write("              x");
-
+                Console.Write("              ║");
+                
                 for (int f = 0; f < x; f++)
                 {
                     bool inneBana = false;
@@ -82,12 +98,15 @@ namespace TjuvOchPolis
                     if (inneBana == false)
                     {
                         Console.Write(" ");
+                        
                     }
                 }
-                Console.Write("x");
+                Console.Write("║");
                 Console.WriteLine();
+                
             }
         }
+
 
     }
 }
