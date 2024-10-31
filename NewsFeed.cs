@@ -15,21 +15,63 @@ namespace TjuvOchPolis
             string message = $"{tjuv.Name} tog en {goods} ifrån {medborgare.Name}";
             messages.Add(message);
 
+
+
+        }
+        public static void PoliceMsg(List<string> messages, Polis polis1, Polis polis2)
+        {
+            string policeMsg = $"Polis {polis1.Name} hälsar på Polis {polis2.Name}.";
+            messages.Add(policeMsg);
         }
 
         public static void WriteMessages(List<string> messages)
         {
-            
-            Console.SetCursorPosition(0,27);
-            int startIndex = Math.Max(messages.Count - 5, 0);
 
+            
+            int startIndex = Math.Max(messages.Count - 5, 0);
+            int yPosition = 27;
             for (int i = messages.Count - 1; i >= startIndex; i--) 
             {
-                
+                Console.SetCursorPosition(25, yPosition);
                 Console.WriteLine(i + " - " + messages[i]+ "         ");
-                
+                yPosition++;
+
+
             }
+
             
+        }
+        public static void NewsFeedBorder()
+        {
+            int x = 100;
+
+            for (int i = 0; i < x; i++)
+            {
+                Console.Write("x");
+            }
+        }
+        public static void NewsFeedMap()
+        {
+            int x = 100;
+            int y = 5;
+
+            Console.WriteLine();
+            for (int z = 0; z < y; z++)
+            {
+                Console.Write("x");
+
+                for (int f = 0; f < x; f++)
+                {
+                    bool inneBana = false;
+
+                    if (inneBana == false)
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.Write("x");
+                Console.WriteLine();
+            }
         }
     }
 }

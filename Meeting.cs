@@ -43,7 +43,9 @@ namespace TjuvOchPolis
 
                         if (typ == typeof(Polis) && typMeeting == typeof(Polis))
                         {
-
+                            Polis polis1 = (Polis)person;
+                            Polis polis2 = (Polis)personMeeting;
+                            NewsFeed.PoliceMsg(messages, polis1, polis2);
                         }
                     }
                 }
