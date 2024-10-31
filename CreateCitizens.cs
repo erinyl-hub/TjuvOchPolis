@@ -26,11 +26,14 @@ namespace TjuvOchPolis
                 int y;
                 bool loopKey = false;
 
-
+                //En do-while-loop som fortsätter att köra så länge loopKey är false. 
+                //Den används för att generera nya koordinater x och y tills en ledig position hittas.
                 do
                 {
                     x = Random.Shared.Next(1, 101);
                     y = Random.Shared.Next(1, 26);
+
+                    //Kallar metoden PositionTest för att kontrollera om den slumpmässiga positionen redan är upptagen av en annan medborgare.
                     loopKey = PositionTest(citizens, x, y);
 
                 } while (loopKey == false);
