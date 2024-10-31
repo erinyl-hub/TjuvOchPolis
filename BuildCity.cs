@@ -10,35 +10,61 @@ namespace TjuvOchPolis
     {
         public static void Border()
         {
+
             int x = 102;
 
             for (int i = 0; i < x; i++)
             {
-                Console.Write("x");
+                Console.Write("x"); //Taket och golvet av banan
             }
+
+            
+
         }
+
+
         public static void Bana()
         {
             int x = 100;
             int y = 25;
 
+            BuildPrison.BuildPrisonBorder();
+
             Console.WriteLine();
+
             for (int z = 0; z < y; z++)
             {
-                Console.Write("x");
+                Console.Write("x"); //Vänster vägg av banan
 
                 for (int f = 0; f < x; f++)
                 {
-                    bool inneBana = false;
-                    
-                    if (inneBana == false)
-                    {
-                        Console.Write(" ");
-                    }                                      
+                    Console.Write(" ");
+
                 }
-                Console.Write("x");
+
+                Console.Write("x"); //Höger vägg av banan
+
+                if (z < 15 )
+                {
+                    BuildPrison.BuildPrisonWalls();
+
+                }
+
+                if (z == 15 )
+
+                {
+                    BuildPrison.BuildPrisonBorder();
+                }
+
+
+
+                    
+                
+                
                 Console.WriteLine();
+               
             }
+            
         }
     }
 }
