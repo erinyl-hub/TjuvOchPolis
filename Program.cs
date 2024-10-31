@@ -29,7 +29,7 @@ namespace TjuvOchPolis
             {
 
                 Movment.Rörelse(citizens, messages);
-                System.Threading.Thread.Sleep(200);
+                System.Threading.Thread.Sleep(100);
                 NewsFeed.WriteMessages(messages);
                 
             }

@@ -25,7 +25,15 @@ namespace TjuvOchPolis
                 {
                     if (ThiefInfo.ThiefFree(person)) // Om tjuv inte är fri
                     {
+                        Tjuv prisonor = (Tjuv)person;
 
+                        if (!prisonor.WalkOfShame) // Kör walkofShame 1 gång
+                        {
+                            MovmentPrison.PrisonEnter(prisonor);
+                            prisonor.WalkOfShame = true;
+                        }
+
+                        MovmentPrison.FlyttaTjuv(person);
 
                     }
                     else // Om tjuv är fri

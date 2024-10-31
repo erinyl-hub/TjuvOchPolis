@@ -49,9 +49,11 @@ namespace TjuvOchPolis
     {
         public bool Fri { get; set; }
         public Inventory StolenGoods { get; set; }
+        public bool WalkOfShame { get; set; }
 
         public Tjuv(Inventory stolenGoods, int xposition, int yposition, string name, int riktning, bool fri) : base(xposition, yposition, name, riktning)
         {
+            WalkOfShame = false;
             StolenGoods= stolenGoods;
             Fri = fri;
         }

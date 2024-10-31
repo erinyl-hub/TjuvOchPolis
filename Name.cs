@@ -43,7 +43,7 @@ namespace TjuvOchPolis
             "Lennart Sjögren",
             "Patrik Axelsson",
             "Kim Nilsson",
-            "Oscar Ekman"
+            "Felicia Runfrost"
         };
 
         public string[] medborgarnamn = {
