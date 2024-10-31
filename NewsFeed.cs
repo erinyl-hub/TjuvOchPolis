@@ -52,11 +52,11 @@ namespace TjuvOchPolis
         }
 
 
-        
+
 
         public static void NewsFeedBorder()
         {
-            int x = 72;
+            int x = 70;
             int StartOffset = 14;
             int yPosition = 31;
 
@@ -66,13 +66,15 @@ namespace TjuvOchPolis
 
 
             Console.Write(new string(' ', StartOffset));
+            Console.Write("╔");
             for (int i = 0; i < x; i++)
             {
 
                 Console.Write("=");
-                
+
             }
-            
+            Console.Write("╗");
+
 
 
 
@@ -90,7 +92,7 @@ namespace TjuvOchPolis
             for (int z = 0; z < y; z++)
             {
                 Console.Write("              ║");
-                
+
                 for (int f = 0; f < x; f++)
                 {
                     bool inneBana = false;
@@ -98,15 +100,39 @@ namespace TjuvOchPolis
                     if (inneBana == false)
                     {
                         Console.Write(" ");
-                        
+
                     }
                 }
                 Console.Write("║");
                 Console.WriteLine();
-                
+
             }
         }
 
+        public static void NewsFeedBottom()
+        {
+            int x = 70;
+            int Yposition = 39;
+            int StartPosition = 0;
+
+
+            Console.SetCursorPosition(14, Yposition);
+
+            Console.Write(new string(' ', StartPosition));
+            Console.Write("╚");
+            for (int i = 0; i < x; i++) 
+            {
+                Console.Write("=");
+
+            }
+            Console.Write("╝");
+        }
+
+
+
 
     }
+
+
 }
+
