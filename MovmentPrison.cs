@@ -14,15 +14,27 @@ namespace TjuvOchPolis
         public static void PrisonEnter(Tjuv tjuv)
         {       
             tjuv.YPosition = 1;
-            tjuv.XPosition = 114;
+            tjuv.XPosition = 116;
             
             for (int i = 0; i < 4; i++)
-            {       
+            {
+                int polisX = tjuv.XPosition - 1;              
                 tjuv.YPosition ++;            
                 Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write("T");
-                System.Threading.Thread.Sleep(10);
+                if(i < 2)
+                {
+                    Console.SetCursorPosition(polisX, tjuv.YPosition);
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.Write("P");
+                    
+
+                }
+    
+                System.Threading.Thread.Sleep(250);
+                Console.SetCursorPosition(polisX, tjuv.YPosition);
+                Console.Write(" ");
                 Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
                 Console.Write(" ");
             }
@@ -38,7 +50,7 @@ namespace TjuvOchPolis
             if (x <= 106  )
                 tillåtnaRiktningar = new List<int> { 3, 5, 6 };
 
-            else if (x >= 125)
+            else if (x >= 126)
                 tillåtnaRiktningar = new List<int> { 2, 4, 7 };
 
             else if (y <= 5)  //ändra
@@ -78,8 +90,8 @@ namespace TjuvOchPolis
 
 
                 case 4: if (person.YPosition > 5 && person.XPosition > 106) { person.YPosition--; person.XPosition--; } break;
-                case 5: if (person.YPosition < 20 && person.XPosition < 126) { person.YPosition++; person.XPosition++; } break;
-                case 6: if (person.YPosition > 5 && person.XPosition < 126) { person.YPosition--; person.XPosition++; } break;
+                case 5: if (person.YPosition < 20 && person.XPosition < 127) { person.YPosition++; person.XPosition++; } break;
+                case 6: if (person.YPosition > 5 && person.XPosition < 127) { person.YPosition--; person.XPosition++; } break;
                 case 7: if (person.YPosition < 20 && person.XPosition > 106) { person.YPosition++; person.XPosition--; } break;
             }
         }
