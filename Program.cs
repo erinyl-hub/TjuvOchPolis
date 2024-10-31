@@ -21,10 +21,11 @@ namespace TjuvOchPolis
             BuildCity.Bana();
             BuildCity.BottomBorder();
 
-           
+
             NewsFeed.NewsFeedMap();
             NewsFeed.NewsFeedBorder();
-
+            NewsFeed.NewsFeedBottom();
+            
             while (true)
             {
 
