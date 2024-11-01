@@ -42,7 +42,7 @@ namespace TjuvOchPolis
             Console.WriteLine();
         }
 
-        public static void GamePlayerPress(List<Person> citizens, List<string> messages)
+        public static void GamePlayerPress(List<Person> citizens, List<string> messages, int[] status)
         {
             char input = Console.ReadKey(true).KeyChar;
 
@@ -53,7 +53,7 @@ namespace TjuvOchPolis
                 case 's':
 
                     IsGameRunning = true;
-                    RunGameLoop(citizens, messages);
+                    RunGameLoop(citizens, messages, status);
                     break;
 
                 case 'p':
@@ -78,7 +78,7 @@ namespace TjuvOchPolis
 
 
         // Metod för att köra spel-loopen
-        public static void RunGameLoop(List<Person> citizens, List<string> messages)
+        public static void RunGameLoop(List<Person> citizens, List<string> messages, int[] status)
         {
             while (true)
             {
@@ -89,9 +89,10 @@ namespace TjuvOchPolis
                     if (!IsGamePaused)
                     {
                         // Flytta alla karaktärer
-                        Movment.Rörelse(citizens, messages);
+                        Movment.Rörelse(citizens, messages, status);
 
                         NewsFeed.WriteMessages(messages);
+                        NewsFeed.PrintStatus(status);
                     }
 
                     System.Threading.Thread.Sleep(100); 

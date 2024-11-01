@@ -50,7 +50,28 @@ namespace TjuvOchPolis
 
             }
         }
+        public static void PrintStatus(int[] status)
+        {
+            int yPosition = 21;
+            int xPosition = 106;
 
+            Console.SetCursorPosition(xPosition, yPosition);
+            Console.Write("Status:");
+            yPosition++;
+            Console.SetCursorPosition(xPosition, yPosition);
+            Console.Write($"Fria tjuvar: {status[0]}");
+            yPosition++;
+            Console.SetCursorPosition(xPosition, yPosition);
+            Console.Write($"Tjuvar i fängelse: {status[1]}");
+            yPosition++;
+            Console.SetCursorPosition(xPosition, yPosition);
+            Console.Write($"Rånade medborgare: {status[2]}");
+            yPosition++;
+            Console.SetCursorPosition(xPosition, yPosition);
+            Console.Write($"Munkfika!: {status[3]}");
+            yPosition++;
+
+        }
 
 
 
