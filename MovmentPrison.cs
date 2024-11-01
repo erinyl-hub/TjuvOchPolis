@@ -95,6 +95,43 @@ namespace TjuvOchPolis
             Console.Write(" ");
 
         }
+        public static void PrisonExit(Tjuv tjuv)
+        {
+           
+                tjuv.YPosition = 11;
+                tjuv.XPosition = 107;
+
+            Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
+            Console.Write("T");
+
+            for (int i = 0; i < 8; i++)
+                {
+                    
+                    if (i < 8)
+                    {
+                        Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
+                        Console.Write(" ");
+                    }
+
+
+                    tjuv.XPosition--;
+
+
+                    Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
+                    Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("T");
+                Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
+                    Thread.Sleep(250);
+                    Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
+                Console.Write(" ");
+
+
+
+            }
+
+            
+        
+        }
 
 
 
@@ -145,6 +182,8 @@ namespace TjuvOchPolis
         // NY METOD: Flytta personen baserat på riktningen
         public static void FlyttaTjuv(Person person)
         {
+            Tjuv thief = (Tjuv)person;
+
             List<int> tillåtnaRiktningar = HämtaTillåtnaRiktningar(person.XPosition, person.YPosition);
 
             if (tillåtnaRiktningar.Count < 8)
@@ -165,6 +204,8 @@ namespace TjuvOchPolis
                 case 6: if (person.YPosition > 5 && person.XPosition < 127) { person.YPosition--; person.XPosition++; } break;
                 case 7: if (person.YPosition < 20 && person.XPosition > 106) { person.YPosition++; person.XPosition--; } break;
             }
+            
+
         }
 
 
