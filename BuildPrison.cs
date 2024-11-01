@@ -15,7 +15,7 @@ namespace TjuvOchPolis
             for (int i = 0; i < 21; i++)
             {
                 
-                Console.Write("=");
+                Console.Write("═");
 
             }
             Console.Write("╗");
@@ -29,7 +29,7 @@ namespace TjuvOchPolis
             for (int i = 0; i < 21; i++)
             {
 
-                Console.Write("=");
+                Console.Write("═");
 
             }
             Console.Write("╝");
@@ -41,7 +41,7 @@ namespace TjuvOchPolis
         {
             if(z == 5 || z == 7)
             {
-                Console.Write("===║");
+                Console.Write("═══║");
             }
             else
             {
