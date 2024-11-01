@@ -115,6 +115,27 @@ namespace TjuvOchPolis
 
 
                     tjuv.XPosition--;
+                if (i == 1)
+{
+    System.Threading.Thread.Sleep(700);
+    OppenDoor((tjuv.XPosition - 1), tjuv.YPosition);
+}
+
+if (i == 4)
+{
+    System.Threading.Thread.Sleep(700);
+    CloseDoor((tjuv.XPosition + 3), tjuv.YPosition);
+    System.Threading.Thread.Sleep(700);
+    OppenDoor((tjuv.XPosition - 1), tjuv.YPosition);
+}
+
+
+if (i == 7)
+{
+    System.Threading.Thread.Sleep(700);
+    CloseDoor((tjuv.XPosition + 2), tjuv.YPosition);
+    System.Threading.Thread.Sleep(200);
+}
 
 
                     Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
