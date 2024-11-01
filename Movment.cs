@@ -38,6 +38,10 @@ namespace TjuvOchPolis
 
                         MovmentPrison.FlyttaTjuv(person);
                         ThiefInfo.ServeTime(prisonor);
+                        if (prisonor.Fri)
+                        {
+                            MovmentPrison.PrisonExit(prisonor);
+                        }
 
 
 

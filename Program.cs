@@ -11,14 +11,17 @@ namespace TjuvOchPolis
             List<Person> citizens = new List<Person>();
             CreateCitizens.AddCitizens(citizens);
             List<string> messages = new List<string>();
-            int[] status = new int[4]; 
-
-
 
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
+
+            GameTopText.GameTextWelcome();
+            GameTopText.GameTextPlayers();
+
+            
+
 
             BuildCity.Border();
             BuildCity.Bana();
@@ -28,17 +31,25 @@ namespace TjuvOchPolis
             NewsFeed.NewsFeedMap();
             NewsFeed.NewsFeedBorder();
             NewsFeed.NewsFeedBottom();
-            
+
+
+            while (true)
+            {
+                GameTopText.GamePlayerPress(citizens, messages);
+
+            }
+
             while (true)
             {
 
-                Movment.Rörelse(citizens, messages,status);
-                System.Threading.Thread.Sleep(1);
+                Movment.Rörelse(citizens, messages);
+                System.Threading.Thread.Sleep(200);
                 NewsFeed.WriteMessages(messages);
-                NewsFeed.PrintStatus(status);
                 
             }
-         
+
+           
+
         }
     }
 }

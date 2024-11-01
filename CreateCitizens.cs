@@ -52,7 +52,7 @@ namespace TjuvOchPolis
                 else if (typ == typeof(Tjuv))
                 {
                     Inventory inventory = new Inventory(0, 0, 0, 0);
-                    Tjuv tjuv = new Tjuv(inventory, x, y, name, movement, true,0);
+                    Tjuv tjuv = new Tjuv(inventory, x, y, name, movement, true);
                     citizens.Add(tjuv);
                 }
                 else if (typ == typeof(Medborgare))
