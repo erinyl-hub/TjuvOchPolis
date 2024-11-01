@@ -73,7 +73,7 @@ namespace TjuvOchPolis
             for (int i = 0; i < x; i++)
             {
 
-                Console.Write("=");
+                Console.Write("═");
 
             }
             Console.Write("╗");
@@ -125,7 +125,7 @@ namespace TjuvOchPolis
             Console.Write("╚");
             for (int i = 0; i < x; i++) 
             {
-                Console.Write("=");
+                Console.Write("═");
 
             }
             Console.Write("╝");
