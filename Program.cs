@@ -17,6 +17,9 @@ namespace TjuvOchPolis
             Console.WriteLine();
             Console.WriteLine();
 
+            GameTopText.GameTextWelcome();
+            GameTopText.GameTextPlayers();
+
             BuildCity.Border();
             BuildCity.Bana();
             BuildCity.BottomBorder();
