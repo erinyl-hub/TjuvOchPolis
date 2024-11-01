@@ -60,8 +60,11 @@ namespace TjuvOchPolis
             int StartOffset = 14;
             int yPosition = 31;
 
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(44, yPosition);
             Console.WriteLine("NewsFeed");
+            Console.ResetColor();
 
 
 
