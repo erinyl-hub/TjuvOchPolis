@@ -35,6 +35,7 @@ namespace TjuvOchPolis
 
                         MovmentPrison.FlyttaTjuv(person);
 
+
                     }
                     else // Om tjuv är fri
                     {

@@ -36,10 +36,23 @@ namespace TjuvOchPolis
 
         }
 
-        public static void BuildPrisonWalls()
+        public static void BuildPrisonWalls(int z)
 
         {
-            Console.Write("   ║");
+            if(z == 5 || z == 7)
+            {
+                Console.Write("===║");
+            }
+            else
+            {
+                Console.Write("   ║");
+            }
+
+
+            
+
+
+
             for (int i = 0; i < 21; i++) 
             {
                Console.Write(" ");
