@@ -8,14 +8,15 @@ namespace TjuvOchPolis
 {
     class GameTopText
     {
-        public static bool IsGameRunning { get; private set; } = false; // Spelstatus
-        public static bool IsGamePaused { get; private set; } = false;
+        public static bool IsGameRunning { get; set; } = false; 
+        public static bool IsGamePaused { get; set; } = false;
+
 
         public static void GameTextWelcome()
         {
             Console.Clear();
             string welcomeMessage = "══════════ Välkommna till spelet Tjuv & Polis! ══════════";
-            
+
             int consoleWidth = Console.WindowWidth; // Hämta konsolens bredd
 
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -49,62 +50,100 @@ namespace TjuvOchPolis
 
             Console.WriteLine();
 
+
+
             switch (input)
             {
                 case 's':
 
-                    IsGameRunning = true;
-                    RunGameLoop(citizens, messages, status);
+                    if (!IsGameRunning) 
+                    {
+                        
+                        IsGameRunning = true;
+                        IsGamePaused = false;
+                        Thread gameThread = new Thread(() => RunGameLoop(citizens, messages, status));
+                        gameThread.Start();
+                    }
+
+                    else if (IsGamePaused) 
+                    {
+                        // Återuppta spelet
+                        IsGamePaused = false;
+                        
+                    }
                     break;
 
                 case 'p':
 
+                    if (IsGameRunning) 
+                    {
 
-
-
+                        IsGamePaused = !IsGamePaused;
+                        
+                    }
                     break;
 
                 case 'r':
 
-                    IsGameRunning = false;
-
+                    ResetGame(citizens, messages, status); // Anropa den nya återställningsmetoden
                     break;
 
-                default:
-                    
 
+                default:
                     break;
             }
         }
 
 
-        // Metod för att köra spel-loopen
+       
         public static void RunGameLoop(List<Person> citizens, List<string> messages, int[] status)
         {
-            while (true)
+            while (IsGameRunning)
             {
-                
-
-                if (IsGameRunning)
-                {
-                    if (!IsGamePaused)
-                    {
-                        // Flytta alla karaktärer
-                        Movment.Rörelse(citizens, messages, status);
-
-                        NewsFeed.WriteMessages(messages);
-                        NewsFeed.PrintStatus(status);
-                    }
-
-                    System.Threading.Thread.Sleep(100); 
-                }
-                else
+                if (!IsGamePaused)
                 {
                     
-                    
-                    System.Threading.Thread.Sleep(500); // Pausa mellan meddelanden ?
+                    Movment.Rörelse(citizens, messages, status);
+
+                    NewsFeed.WriteMessages(messages);
+                    NewsFeed.PrintStatus(status);
                 }
+
+                Thread.Sleep(100); 
             }
+        }
+
+        // Metod för att återställa spelet vid omstart
+        private static void ResetGame(List<Person> citizens, List<string> messages, int[] status)
+        {
+            // Stoppa spelet
+            IsGameRunning = false;
+            IsGamePaused = false;
+
+            // Rensa listor och status
+            citizens.Clear();
+            messages.Clear();
+            Array.Clear(status, 0, status.Length);
+
+            // Återskapa medborgare och tjuvar för en ny spelomgång
+            CreateCitizens.AddCitizens(citizens);
+
+            // Rensa konsolen och visa välkomsttext och kontroller
+            Console.Clear();
+            GameTextWelcome();
+            GameTextPlayers();
+
+            // Rita om gränser och spelplan
+            BuildCity.Border();
+            BuildCity.Bana();
+            BuildCity.BottomBorder();
+
+            // Rita om nyhetsfönstret
+            
+            NewsFeed.NewsFeedMap();
+            NewsFeed.NewsFeedBorder();
+            NewsFeed.NewsFeedBottom();
+            NewsFeed.StatusText();
         }
     }
 }

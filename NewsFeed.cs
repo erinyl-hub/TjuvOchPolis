@@ -50,14 +50,28 @@ namespace TjuvOchPolis
 
             }
         }
+
+
+        //Gjorde en ny metod för texten då jag inte visste hur den annars skulle skrivas ut innan [S] start.
+        public static void StatusText()
+        {
+            int yPosition = 21;
+            int xPosition = 107;
+            Console.SetCursorPosition(xPosition, yPosition);
+            Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("   ═══ Status ═══"); Console.ResetColor();
+
+        }
+
+
+
+
         public static void PrintStatus(int[] status)
         {
             int yPosition = 21;
             int xPosition = 107;
 
             
-            Console.SetCursorPosition(xPosition, yPosition);
-            Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("   ═══ Status ═══"); Console.ResetColor();
+            
        
             yPosition++;
             Console.SetCursorPosition(xPosition, yPosition);

@@ -28,10 +28,11 @@ namespace TjuvOchPolis
             BuildCity.Bana();
             BuildCity.BottomBorder();
 
-
+            
             NewsFeed.NewsFeedMap();
             NewsFeed.NewsFeedBorder();
             NewsFeed.NewsFeedBottom();
+            NewsFeed.StatusText();
 
 
             while (true)
@@ -40,14 +41,7 @@ namespace TjuvOchPolis
 
             }
 
-            //while (true)
-            //{
-
-            //    Movment.Rörelse(citizens, messages, status);
-            //    System.Threading.Thread.Sleep(200);
-            //    NewsFeed.WriteMessages(messages);
-                
-            //}
+            
 
            
 

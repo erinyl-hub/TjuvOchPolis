@@ -13,5 +13,7 @@ namespace TjuvOchPolis
 
         public static bool IsGamePaused { get;  set; } = false;
 
+
+
     }
 }
