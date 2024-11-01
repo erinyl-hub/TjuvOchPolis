@@ -20,6 +20,9 @@ namespace TjuvOchPolis
             GameTopText.GameTextWelcome();
             GameTopText.GameTextPlayers();
 
+            
+
+
             BuildCity.Border();
             BuildCity.Bana();
             BuildCity.BottomBorder();
@@ -28,7 +31,14 @@ namespace TjuvOchPolis
             NewsFeed.NewsFeedMap();
             NewsFeed.NewsFeedBorder();
             NewsFeed.NewsFeedBottom();
-            
+
+
+            while (true)
+            {
+                GameTopText.GamePlayerPress(citizens, messages);
+
+            }
+
             while (true)
             {
 
@@ -37,7 +47,9 @@ namespace TjuvOchPolis
                 NewsFeed.WriteMessages(messages);
                 
             }
-         
+
+           
+
         }
     }
 }
