@@ -19,5 +19,20 @@ namespace TjuvOchPolis
             else
                 return true;
         }
+        public static void ServeTime(Tjuv tjuv)
+        {
+
+                if (tjuv.SentenceTime > 0)
+                {
+                tjuv.SentenceTime--;
+                }
+                if (tjuv.SentenceTime == 0)
+                {
+                    tjuv.Fri = true;
+                    tjuv.WalkOfShame = false;
+                }
+            
+
+        }
     }
 }

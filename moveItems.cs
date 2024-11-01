@@ -32,6 +32,7 @@ namespace TjuvOchPolis
                         string goods = "mobil";
                         medborgare.Belongings.Mobil--;
                         tjuv.StolenGoods.Mobil++;
+                        tjuv.SentenceTime += 10;
                         NewsFeed.AddMessages(messages, tjuv, medborgare, goods);
                     }
                     break;
