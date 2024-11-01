@@ -97,61 +97,54 @@ namespace TjuvOchPolis
         }
         public static void PrisonExit(Tjuv tjuv)
         {
-           
-                tjuv.YPosition = 11;
-                tjuv.XPosition = 107;
 
-            Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
-            Console.Write("T");
+            tjuv.YPosition = 11;
+            tjuv.XPosition = 107;
+
+            
 
             for (int i = 0; i < 8; i++)
-                {
-                    
-                    if (i < 8)
-                    {
-                        Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
-                        Console.Write(" ");
-                    }
-
-
-                    tjuv.XPosition--;
-                if (i == 1)
-{
-    System.Threading.Thread.Sleep(700);
-    OppenDoor((tjuv.XPosition - 1), tjuv.YPosition);
-}
-
-if (i == 4)
-{
-    System.Threading.Thread.Sleep(700);
-    CloseDoor((tjuv.XPosition + 3), tjuv.YPosition);
-    System.Threading.Thread.Sleep(700);
-    OppenDoor((tjuv.XPosition - 1), tjuv.YPosition);
-}
-
-
-if (i == 7)
-{
-    System.Threading.Thread.Sleep(700);
-    CloseDoor((tjuv.XPosition + 2), tjuv.YPosition);
-    System.Threading.Thread.Sleep(200);
-}
-
-
-                    Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
-                    Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("T");
+            {
                 Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
-                    Thread.Sleep(250);
-                    Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("T");                        
+
+                if (i == 1)
+                {
+                    System.Threading.Thread.Sleep(700);
+                    OppenDoor((tjuv.XPosition - 1), tjuv.YPosition);
+                }
+
+                if (i == 4)
+                {
+                    System.Threading.Thread.Sleep(700); 
+                    CloseDoor((tjuv.XPosition + 2), tjuv.YPosition);
+                    System.Threading.Thread.Sleep(700);
+                    OppenDoor((tjuv.XPosition - 2), tjuv.YPosition);
+                }
+
+
+                if (i == 7)
+                {
+                    System.Threading.Thread.Sleep(700);
+                    CloseDoor((tjuv.XPosition + 1), tjuv.YPosition);
+                    System.Threading.Thread.Sleep(200);
+                }
+
+
+                
+                
+                Thread.Sleep(250);
+                Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
                 Console.Write(" ");
+                tjuv.XPosition--;
 
 
 
             }
 
-            
-        
+
+
         }
 
 
