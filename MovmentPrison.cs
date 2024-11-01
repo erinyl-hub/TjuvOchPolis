@@ -25,6 +25,41 @@ namespace TjuvOchPolis
                 Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write("T");
+
+
+
+
+                if (i == 2)
+                {
+                    System.Threading.Thread.Sleep(700);
+                    OppenDoor((tjuv.XPosition + 1), tjuv.YPosition);                  
+                }
+
+                if(i == 5)  
+                {
+                    System.Threading.Thread.Sleep(700);
+                    CloseDoor((tjuv.XPosition - 2), tjuv.YPosition);
+                    System.Threading.Thread.Sleep(700);
+                    OppenDoor((tjuv.XPosition + 2), tjuv.YPosition);
+                }
+               
+
+                if (i == 8)
+                {
+                    System.Threading.Thread.Sleep(700);
+                    CloseDoor((tjuv.XPosition - 1), tjuv.YPosition);
+                    System.Threading.Thread.Sleep(200);
+                }
+
+
+
+
+
+
+
+
+
+
                 if (i < 3)
                 {
                     int polisY = tjuv.YPosition - 1;
@@ -63,14 +98,16 @@ namespace TjuvOchPolis
 
 
 
-        public static void CloseDoor()
+        public static void CloseDoor(int doorX, int doorY)
         {
-
+            Console.SetCursorPosition(doorX, doorY);
+            Console.Write("║");
         }
 
-        public static void OppenDoor()
+        public static void OppenDoor(int doorX, int doorY)
         {
-
+            Console.SetCursorPosition(doorX, doorY);
+            Console.Write(" ");
         }
 
 
