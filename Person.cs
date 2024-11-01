@@ -27,9 +27,11 @@ namespace TjuvOchPolis
     {       
         public Inventory SeizedGoods { get; set; }
 
+
         public Polis(Inventory seizedGoods, int xposition, int yposition, string name, int riktning) : base (xposition, yposition, name, riktning)
         {
-            SeizedGoods = seizedGoods;        
+            SeizedGoods = seizedGoods; 
+            
         }
 
     }
@@ -37,6 +39,7 @@ namespace TjuvOchPolis
     internal class Medborgare : Person
     {
         public Inventory Belongings { get; set; }
+
 
         public Medborgare(Inventory belongings, int xposition, int yposition, string name, int riktning) : base(xposition, yposition, name, riktning)
         {          

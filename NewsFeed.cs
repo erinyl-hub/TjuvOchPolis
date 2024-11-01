@@ -52,87 +52,113 @@ namespace TjuvOchPolis
         }
 
 
+        public static void PrintStatus(int[] status)
+        {
+            int yPosition = 21;
+            int xPosition = 106;
+
+            Console.SetCursorPosition(xPosition, yPosition); 
+            Console.Write("Status:");
+            yPosition++;
+            Console.SetCursorPosition(xPosition, yPosition);
+            Console.Write($"Fria tjuvar: {status[0]}");
+            yPosition++;
+            Console.SetCursorPosition(xPosition, yPosition);
+            Console.Write($"Tjuvar i fängelse: {status[1]}");
+            yPosition++;
+            Console.SetCursorPosition(xPosition, yPosition);
+            Console.Write($"Rånade medborgare: {status[2]}");
+            yPosition++;
+            Console.SetCursorPosition(xPosition, yPosition);
+            Console.Write($"Munkfika!: {status[3]}");
+            yPosition++;
+
+        }
+
+
+
 
 
         public static void NewsFeedBorder()
-        {
-            int x = 70;
-            int StartOffset = 14;
-            int yPosition = 31;
-
-            Console.SetCursorPosition(44, yPosition);
-            Console.WriteLine("NewsFeed");
-
-
-
-            Console.Write(new string(' ', StartOffset));
-            Console.Write("╔");
-            for (int i = 0; i < x; i++)
             {
+                int x = 70;
+                int StartOffset = 14;
+                int yPosition = 31;
 
-                Console.Write("=");
-
-            }
-            Console.Write("╗");
-
-
-
-
-        }
+                Console.SetCursorPosition(44, yPosition);
+                Console.WriteLine("NewsFeed");
 
 
 
-
-        public static void NewsFeedMap()
-        {
-            int x = 70;
-            int y = 7;
-
-            Console.WriteLine();
-            for (int z = 0; z < y; z++)
-            {
-                Console.Write("              ║");
-
-                for (int f = 0; f < x; f++)
+                Console.Write(new string(' ', StartOffset));
+                Console.Write("╔");
+                for (int i = 0; i < x; i++)
                 {
-                    bool inneBana = false;
 
-                    if (inneBana == false)
-                    {
-                        Console.Write(" ");
+                    Console.Write("=");
 
-                    }
                 }
-                Console.Write("║");
-                Console.WriteLine();
+                Console.Write("╗");
+
+
+
 
             }
-        }
-
-        public static void NewsFeedBottom()
-        {
-            int x = 70;
-            int Yposition = 39;
-            int StartPosition = 0;
 
 
-            Console.SetCursorPosition(14, Yposition);
 
-            Console.Write(new string(' ', StartPosition));
-            Console.Write("╚");
-            for (int i = 0; i < x; i++) 
+
+            public static void NewsFeedMap()
             {
-                Console.Write("=");
+                int x = 70;
+                int y = 7;
 
+                Console.WriteLine();
+                for (int z = 0; z < y; z++)
+                {
+                    Console.Write("              ║");
+
+                    for (int f = 0; f < x; f++)
+                    {
+                        bool inneBana = false;
+
+                        if (inneBana == false)
+                        {
+                            Console.Write(" ");
+
+                        }
+                    }
+                    Console.Write("║");
+                    Console.WriteLine();
+
+                }
             }
-            Console.Write("╝");
-        }
+
+            public static void NewsFeedBottom()
+            {
+                int x = 70;
+                int Yposition = 39;
+                int StartPosition = 0;
 
 
+                Console.SetCursorPosition(14, Yposition);
+
+                Console.Write(new string(' ', StartPosition));
+                Console.Write("╚");
+                for (int i = 0; i < x; i++)
+                {
+                    Console.Write("=");
+
+                }
+                Console.Write("╝");
+            }
+
+
+
+
+        
 
 
     }
-
-
 }
 

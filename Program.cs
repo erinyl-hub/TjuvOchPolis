@@ -11,6 +11,9 @@ namespace TjuvOchPolis
             List<Person> citizens = new List<Person>();
             CreateCitizens.AddCitizens(citizens);
             List<string> messages = new List<string>();
+            int[] status = new int[4]; 
+
+
 
             Console.WriteLine();
             Console.WriteLine();
@@ -29,9 +32,10 @@ namespace TjuvOchPolis
             while (true)
             {
 
-                Movment.Rörelse(citizens, messages);
+                Movment.Rörelse(citizens, messages,status);
                 System.Threading.Thread.Sleep(1);
                 NewsFeed.WriteMessages(messages);
+                NewsFeed.PrintStatus(status);
                 
             }
          

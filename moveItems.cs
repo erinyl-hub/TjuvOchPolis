@@ -11,12 +11,14 @@ namespace TjuvOchPolis
     internal class MoveItems
     {
 
-        public static void ThiefCitizenItems(Tjuv tjuv, Medborgare medborgare, List<string> messages)
+        public static void ThiefCitizenItems(Tjuv tjuv, Medborgare medborgare, List<string> messages, int[] status)
         {
             int rnd = Random.Shared.Next(0, 4);
+            status[2]++;
 
-            switch (rnd)
+            switch (rnd) 
             {
+
                 case 0:
                   if (medborgare.Belongings.Key > 0)
                     {
@@ -25,6 +27,7 @@ namespace TjuvOchPolis
                         tjuv.StolenGoods.Key++;
                         tjuv.SentenceTime += 1000;
                         NewsFeed.AddMessages(messages,tjuv, medborgare, goods);
+                        
                     }
                     break;
                 case 1:
@@ -79,6 +82,8 @@ namespace TjuvOchPolis
                 tjuv.StolenGoods.Money = 0;
                 tjuv.StolenGoods.Watch = 0;
                 tjuv.Fri = false;
+
+                
             }
             return;
         }

@@ -33,7 +33,7 @@ namespace TjuvOchPolis
 
             }
             Console.Write("╝");
-
+           
         }
 
         public static void BuildPrisonWalls(int z)

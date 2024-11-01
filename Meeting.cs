@@ -9,7 +9,7 @@ namespace TjuvOchPolis
 {
     internal class Meeting
     {
-        public static void PersonMeeting(List<Person> citizens, List<string> messages) // static
+        public static void PersonMeeting(List<Person> citizens, List<string> messages, int[] status) // static
         {
             for (int i = 0; i < citizens.Count; i++)
             {
@@ -30,7 +30,7 @@ namespace TjuvOchPolis
                         {
                             Tjuv thief = (Tjuv)personMeeting;
                             Medborgare citizen = (Medborgare)person;
-                            MoveItems.ThiefCitizenItems(thief, citizen, messages);
+                            MoveItems.ThiefCitizenItems(thief, citizen, messages, status);
 
                         }
 
@@ -46,6 +46,7 @@ namespace TjuvOchPolis
                             Polis polis1 = (Polis)person;
                             Polis polis2 = (Polis)personMeeting;
                             NewsFeed.PoliceMsg(messages, polis1, polis2);
+                            status[3]++;
                         }
                     }
                 }

@@ -9,24 +9,27 @@ namespace TjuvOchPolis
 {
     internal class Movment
     {
-        public static void Rörelse(List<Person> citizens, List<string> messages)
+        public static void Rörelse(List<Person> citizens, List<string> messages, int[] status)
         {
 
-            Meeting.PersonMeeting(citizens, messages);
+            Meeting.PersonMeeting(citizens, messages, status);
 
+            status[0] = 0;
+            status[1] = 0;
             foreach (Person person in citizens)
             {
 
-                
-                    Console.SetCursorPosition(person.XPosition, person.YPosition);
-                    Console.Write(" ");
-                
+
+                Console.SetCursorPosition(person.XPosition, person.YPosition);
+                Console.Write(" ");
+
+
                 if (person is Tjuv)
                 {
                     if (ThiefInfo.ThiefFree(person)) // Om tjuv inte är fri
                     {
                         Tjuv prisonor = (Tjuv)person;
-
+                        status[1] += 1;
                         if (!prisonor.WalkOfShame) // Kör walkofShame 1 gång
                         {
                             MovmentPrison.PrisonEnter(prisonor);
@@ -41,12 +44,13 @@ namespace TjuvOchPolis
                     }
                     else // Om tjuv är fri
                     {
+                        status[0] += 1;
                         FlyttaPerson(person);
                     }
                 }
                 else
-                { 
-                FlyttaPerson(person);
+                {
+                    FlyttaPerson(person);
                 }
 
 
