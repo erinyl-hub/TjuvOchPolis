@@ -101,24 +101,13 @@ namespace TjuvOchPolis
             tjuv.YPosition = 11;
             tjuv.XPosition = 107;
 
-            //Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
-            //Console.Write("T");
+            
 
             for (int i = 0; i < 8; i++)
             {
                 Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("T");
-
-                //if (i < 8)
-                //{
-                //    Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
-                //    Console.Write(" ");
-                //}
-
-
-                
-
+                Console.Write("T");                        
 
                 if (i == 1)
                 {
