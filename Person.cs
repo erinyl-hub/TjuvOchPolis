@@ -54,7 +54,7 @@ namespace TjuvOchPolis
         public int SentenceTime { get; set; }
 
 
-        public Tjuv(Inventory stolenGoods, int xposition, int yposition, string name, int riktning, bool fri, int sentencetime) : base(xposition, yposition, name, riktning)
+        public Tjuv(Inventory stolenGoods, int xposition, int yposition, string name, int riktning, bool fri) : base(xposition, yposition, name, riktning)
         {
             WalkOfShame = false;
             StolenGoods= stolenGoods;
