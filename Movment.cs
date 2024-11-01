@@ -37,6 +37,7 @@ namespace TjuvOchPolis
                         ThiefInfo.ServeTime(prisonor);
 
 
+
                     }
                     else // Om tjuv är fri
                     {

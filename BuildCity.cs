@@ -55,7 +55,7 @@ namespace TjuvOchPolis
 
                 if (z < 15 )
                 {
-                    BuildPrison.BuildPrisonWalls();
+                    BuildPrison.BuildPrisonWalls(z);
 
                 }
 

@@ -13,35 +13,69 @@ namespace TjuvOchPolis
 
         public static void PrisonEnter(Tjuv tjuv)
         {       
-            tjuv.YPosition = 1;
-            tjuv.XPosition = 116;
+            tjuv.YPosition = 11;
+            tjuv.XPosition = 97;
+            int polisLastY = 0;
+            int polisLastX = 0;
             
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 9; i++)
             {
-                int polisX = tjuv.XPosition - 1;              
-                tjuv.YPosition ++;            
+                              
+                tjuv.XPosition ++;            
                 Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write("T");
-                if(i < 2)
+                if (i < 3)
                 {
-                    Console.SetCursorPosition(polisX, tjuv.YPosition);
+                    int polisY = tjuv.YPosition - 1;
+                    Console.SetCursorPosition(tjuv.XPosition, polisY);
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.Write("P");
-                    
+                    System.Threading.Thread.Sleep(250);
+                    Console.SetCursorPosition(tjuv.XPosition, polisY);
+                    Console.Write(" ");
+                }
+                else if (i == 3)
+                {
+                    int polisY = tjuv.YPosition - 1;
+                    int polisX = tjuv.XPosition - 1;                 
+                    Console.SetCursorPosition(polisX, polisY);
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.Write("P");
+                    System.Threading.Thread.Sleep(250);
+                    polisLastX = polisX;
+                    polisLastY = polisY;
 
                 }
-    
-                System.Threading.Thread.Sleep(250);
-                Console.SetCursorPosition(polisX, tjuv.YPosition);
-                Console.Write(" ");
+                else
+                {
+                    System.Threading.Thread.Sleep(250);
+                }
+
+                
                 Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
                 Console.Write(" ");
             }
+            Console.SetCursorPosition(polisLastX, polisLastY);
+            Console.Write(" ");
+
         }
 
 
-       
+
+        public static void CloseDoor()
+        {
+
+        }
+
+        public static void OppenDoor()
+        {
+
+        }
+
+
+
+
 
         public static List<int> HämtaTillåtnaRiktningar(int x, int y)
         {
