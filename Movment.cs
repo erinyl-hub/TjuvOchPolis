@@ -34,6 +34,8 @@ namespace TjuvOchPolis
                         }
 
                         MovmentPrison.FlyttaTjuv(person);
+                        ThiefInfo.ServeTime(prisonor);
+
 
 
                     }
