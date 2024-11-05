@@ -14,7 +14,6 @@ namespace TjuvOchPolis
         public static void ThiefCitizenItems(Tjuv tjuv, Medborgare medborgare, List<string> messages, int[] status)
         {
             int rnd = Random.Shared.Next(0, 4);
-            status[2]++;
 
             switch (rnd) 
             {
@@ -27,7 +26,8 @@ namespace TjuvOchPolis
                         tjuv.StolenGoods.Key++;
                         tjuv.SentenceTime += 10;
                         NewsFeed.AddMessages(messages,tjuv, medborgare, goods);
-                        
+                        status[2]++;
+
                     }
                     break;
                 case 1:
@@ -38,6 +38,7 @@ namespace TjuvOchPolis
                         tjuv.StolenGoods.Mobil++;
                         tjuv.SentenceTime += 10;
                         NewsFeed.AddMessages(messages, tjuv, medborgare, goods);
+                        status[2]++;
                     }
                     break;
                 case 2:
@@ -48,6 +49,7 @@ namespace TjuvOchPolis
                         tjuv.StolenGoods.Money++;
                         tjuv.SentenceTime += 10;
                         NewsFeed.AddMessages(messages, tjuv, medborgare, goods);
+                        status[2]++;
                     }
                     break;
                 case 3:
@@ -58,6 +60,7 @@ namespace TjuvOchPolis
                         tjuv.StolenGoods.Watch++;
                         tjuv.SentenceTime += 10;
                         NewsFeed.AddMessages(messages, tjuv, medborgare, goods);
+                        status[2]++;
                     }
                     break;
 

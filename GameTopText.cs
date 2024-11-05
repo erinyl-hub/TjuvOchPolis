@@ -109,7 +109,7 @@ namespace TjuvOchPolis
                     NewsFeed.PrintStatus(status);
                 }
 
-                Thread.Sleep(100); 
+                Thread.Sleep(150); 
             }
         }
 

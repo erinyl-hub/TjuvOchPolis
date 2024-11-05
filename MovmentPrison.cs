@@ -15,8 +15,6 @@ namespace TjuvOchPolis
         {       
             tjuv.YPosition = 11;
             tjuv.XPosition = 97;
-            int polisLastY = 0;
-            int polisLastX = 0;
             
             for (int i = 0; i < 9; i++)
             {
@@ -29,74 +27,72 @@ namespace TjuvOchPolis
 
 
 
-                if (i == 2)
-                {
-                    System.Threading.Thread.Sleep(700);
-                    OppenDoor((tjuv.XPosition + 1), tjuv.YPosition);                  
-                }
-
-                if(i == 5)  
-                {
-                    System.Threading.Thread.Sleep(700);
-                    CloseDoor((tjuv.XPosition - 2), tjuv.YPosition);
-                    System.Threading.Thread.Sleep(700);
-                    OppenDoor((tjuv.XPosition + 2), tjuv.YPosition);
-                }
-               
-
-                if (i == 8)
-                {
-                    System.Threading.Thread.Sleep(700);
-                    CloseDoor((tjuv.XPosition - 1), tjuv.YPosition);
-                    System.Threading.Thread.Sleep(200);
-                }
-
-
-
-
-
-
-
-
-
-
                 if (i < 3)
                 {
                     int polisY = tjuv.YPosition - 1;
                     Console.SetCursorPosition(tjuv.XPosition, polisY);
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.Write("P");
-                    System.Threading.Thread.Sleep(250);
+                    System.Threading.Thread.Sleep(150);
                     Console.SetCursorPosition(tjuv.XPosition, polisY);
-                    Console.Write(" ");
-                }
-                else if (i == 3)
-                {
-                    int polisY = tjuv.YPosition - 1;
-                    int polisX = tjuv.XPosition - 1;                 
-                    Console.SetCursorPosition(polisX, polisY);
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.Write("P");
-                    System.Threading.Thread.Sleep(250);
-                    polisLastX = polisX;
-                    polisLastY = polisY;
+                    if (i < 2)
+                    {
+                        Console.Write(" ");
+                    }
+
 
                 }
+
                 else
                 {
-                    System.Threading.Thread.Sleep(250);
+                    System.Threading.Thread.Sleep(150);
                 }
+
+
+
+                if (i == 2)
+                {
+                    System.Threading.Thread.Sleep(500);
+                    OppenDoor((tjuv.XPosition + 1), tjuv.YPosition);                  
+                }
+
+                if(i == 5)  
+                {
+                    System.Threading.Thread.Sleep(500);
+                    CloseDoor((tjuv.XPosition - 2), tjuv.YPosition);
+                    System.Threading.Thread.Sleep(500);
+                    OppenDoor((tjuv.XPosition + 2), tjuv.YPosition);
+                }
+               
+
+                if (i == 8)
+                {
+                    System.Threading.Thread.Sleep(500);
+                    CloseDoor((tjuv.XPosition - 1), tjuv.YPosition);
+                    System.Threading.Thread.Sleep(150);
+                }
+
+
+
+
+
+
+
+
+
+
+                
 
                 
                 Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
                 Console.Write(" ");
             }
-            Console.SetCursorPosition(polisLastX, polisLastY);
+            Console.SetCursorPosition((tjuv.XPosition - 6), (tjuv.YPosition - 1));
             Console.Write(" ");
 
         }
         public static void PrisonExit(Tjuv tjuv)
-        {
+        {   
 
             tjuv.YPosition = 11;
             tjuv.XPosition = 107;
@@ -111,22 +107,22 @@ namespace TjuvOchPolis
 
                 if (i == 1)
                 {
-                    System.Threading.Thread.Sleep(700);
+                    System.Threading.Thread.Sleep(500);
                     OppenDoor((tjuv.XPosition - 1), tjuv.YPosition);
                 }
 
                 if (i == 4)
                 {
-                    System.Threading.Thread.Sleep(700); 
+                    System.Threading.Thread.Sleep(500); 
                     CloseDoor((tjuv.XPosition + 2), tjuv.YPosition);
-                    System.Threading.Thread.Sleep(700);
+                    System.Threading.Thread.Sleep(500);
                     OppenDoor((tjuv.XPosition - 2), tjuv.YPosition);
                 }
 
 
                 if (i == 7)
                 {
-                    System.Threading.Thread.Sleep(700);
+                    System.Threading.Thread.Sleep(500);
                     CloseDoor((tjuv.XPosition + 1), tjuv.YPosition);
                     System.Threading.Thread.Sleep(200);
                 }
@@ -134,7 +130,7 @@ namespace TjuvOchPolis
 
                 
                 
-                Thread.Sleep(250);
+                Thread.Sleep(150);
                 Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
                 Console.Write(" ");
                 tjuv.XPosition--;
