@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,63 +11,100 @@ namespace TjuvOchPolis
 {
     internal class MoveItems
     {
+        public static List<int> CheckInventory(Medborgare medborgare)
+        {
+            List<int> inventory = new List<int>();
+            if (medborgare.Belongings.Key == 1)
+            {
+                inventory.Add(0);
+            }
+            if (medborgare.Belongings.Mobil == 1)
+            {
+                inventory.Add(1);
+            }
+            if (medborgare.Belongings.Money == 1)
+            {
+                inventory.Add(2);
+            }
+            if (medborgare.Belongings.Watch == 1)
+            {
+                inventory.Add(3);
+            }
+            return inventory;
+
+
+        }
 
         public static void ThiefCitizenItems(Tjuv tjuv, Medborgare medborgare, List<string> messages, int[] status)
         {
-            int rnd = Random.Shared.Next(0, 4);
 
-            switch (rnd) 
+            List<int> inventory = CheckInventory(medborgare);
+
+            if (inventory.Count == 0)
+            {
+                return;
+            }
+            else
             {
 
-                case 0:
-                  if (medborgare.Belongings.Key > 0)
-                    {
-                        string goods = "nyckel";
-                        medborgare.Belongings.Key--;
-                        tjuv.StolenGoods.Key++;
-                        tjuv.SentenceTime += 500;
-                        NewsFeed.AddMessages(messages,tjuv, medborgare, goods);
-                        status[2]++;
+                int rnd = Random.Shared.Next(0, inventory.Count);
 
-                    }
-                    break;
-                case 1:
-                    if (medborgare.Belongings.Mobil > 0)
-                    {
-                        string goods = "mobil";
-                        medborgare.Belongings.Mobil--;
-                        tjuv.StolenGoods.Mobil++;
-                        tjuv.SentenceTime += 500;
-                        NewsFeed.AddMessages(messages, tjuv, medborgare, goods);
-                        status[2]++;
-                    }
-                    break;
-                case 2:
-                    if (medborgare.Belongings.Money > 0)
-                    {
-                        string goods = "plånbok";
-                        medborgare.Belongings.Money--;
-                        tjuv.StolenGoods.Money++;
-                        tjuv.SentenceTime += 500;
-                        NewsFeed.AddMessages(messages, tjuv, medborgare, goods);
-                        status[2]++;
-                    }
-                    break;
-                case 3:
-                    if (medborgare.Belongings.Watch > 0)
-                    {
-                        string goods = "klocka";
-                        medborgare.Belongings.Watch--;
-                        tjuv.StolenGoods.Watch++;
-                        tjuv.SentenceTime += 500;
-                        NewsFeed.AddMessages(messages, tjuv, medborgare, goods);
-                        status[2]++;
-                    }
-                    break;
+                int choice = inventory[rnd];
 
-                default:
+                string goods;
 
-                    break;
+                switch (rnd)
+                {
+
+                    case 0:
+                        
+                        
+                            goods = "nyckel";
+                            medborgare.Belongings.Key--;
+                            tjuv.StolenGoods.Key++;
+                            tjuv.SentenceTime += 500;
+                            NewsFeed.AddMessages(messages, tjuv, medborgare, goods);
+                            status[2]++;
+
+                        
+
+                        break;
+                    case 1:
+                        
+                        
+                            goods = "mobil";
+                            medborgare.Belongings.Mobil--;
+                            tjuv.StolenGoods.Mobil++;
+                            tjuv.SentenceTime += 500;
+                            NewsFeed.AddMessages(messages, tjuv, medborgare, goods);
+                            status[2]++;
+                        
+                        break;
+                    case 2:
+                        
+                            goods = "plånbok";
+                            medborgare.Belongings.Money--;
+                            tjuv.StolenGoods.Money++;
+                            tjuv.SentenceTime += 500;
+                            NewsFeed.AddMessages(messages, tjuv, medborgare, goods);
+                            status[2]++;
+                        
+                        break;
+                    case 3:
+                        
+                            goods = "klocka";
+                            medborgare.Belongings.Watch--;
+                            tjuv.StolenGoods.Watch++;
+                            tjuv.SentenceTime += 500;
+                            NewsFeed.AddMessages(messages, tjuv, medborgare, goods);
+                            status[2]++;
+                        
+                        break;
+
+                    default:
+
+                        break;
+                }
             }
         }
 
@@ -90,6 +128,7 @@ namespace TjuvOchPolis
             }
             return;
         }
+        
     }
 }
 
