@@ -13,17 +13,24 @@ namespace TjuvOchPolis
     {
         public static void AddMessages(List<string> messages, Tjuv tjuv, Medborgare medborgare, string goods)
         {
-            string message = $"{tjuv.Name} tog en {goods} ifrån {medborgare.Name}";
+            
+            string message = $"{tjuv.Name} stal en {goods} ifrån {medborgare.Name}";
             messages.Add(message);
 
-
-
         }
+
         public static void PoliceMsg(List<string> messages, Polis polis1, Polis polis2)
         {
-            string policeMsg = $"Polis {polis1.Name} hälsar på Polis {polis2.Name}.";
+            string policeMsg = $"Polis {polis1.Name} tog en munkfika {polis2.Name}.";
             messages.Add(policeMsg);
         }
+
+        public static void PoliceCatchThiefMsg(List<string> messages, Polis polis, Tjuv tjuv)
+        {
+            string catchMsg = $"Polis {polis.Name} arresterade tjuven {tjuv.Name}";
+            messages.Add(catchMsg);
+        }
+
 
         public static void WriteMessages(List<string> messages)
         {
@@ -49,6 +56,8 @@ namespace TjuvOchPolis
 
 
             }
+
+
         }
 
 
