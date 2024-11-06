@@ -38,7 +38,7 @@ namespace TjuvOchPolis
 
             int startIndex = Math.Max(messages.Count - 5, 0);
             int yPosition = 33;
-            int messageWidth = 60;
+            int messageWidth = 62;
 
 
             for (int i = 0; i < 5; i++)
@@ -84,10 +84,10 @@ namespace TjuvOchPolis
        
             yPosition++;
             Console.SetCursorPosition(xPosition, yPosition);
-            Console.Write($"Fria tjuvar: {status[0]}");
+            Console.Write($"Fria tjuvar: {status[0]} ");
             yPosition++;
             Console.SetCursorPosition(xPosition, yPosition);
-            Console.Write($"Tjuvar i fängelse: {status[1]}");
+            Console.Write($"Tjuvar i fängelse: {status[1]} ");
             yPosition++;
             Console.SetCursorPosition(xPosition, yPosition);
             Console.Write($"Rånade medborgare: {status[2]}");

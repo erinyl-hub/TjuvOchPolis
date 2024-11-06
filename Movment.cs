@@ -36,7 +36,9 @@ namespace TjuvOchPolis
                             prisonor.WalkOfShame = true;
                         }
 
-                        MovmentPrison.FlyttaTjuv(person);
+                        FlyttaPerson(person, 5, 20, 106, 126);
+
+                        // MovmentPrison.FlyttaTjuv(person); // Flyttar Tjuv
                         ThiefInfo.ServeTime(prisonor);
                         if (prisonor.Fri)
                         {
@@ -49,12 +51,12 @@ namespace TjuvOchPolis
                     else // Om tjuv är fri
                     {
                         status[0] += 1;
-                        FlyttaPerson(person);
+                        FlyttaPerson(person, 5, 30, 1, 100); 
                     }
                 }
                 else
                 {
-                    FlyttaPerson(person);
+                    FlyttaPerson(person, 5, 30, 1, 100); //Flyttar medborgare
                 }
 
 
@@ -67,20 +69,20 @@ namespace TjuvOchPolis
         }
 
 
-        public static List<int> HämtaTillåtnaRiktningar(int x, int y)
+        public static List<int> HämtaTillåtnaRiktningar(int citizenX, int citizenY, int yMin, int yMax, int xMin, int xMax)
         {
             List<int> tillåtnaRiktningar = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7 };
 
-            if (x <= 1)
+            if (citizenX <= xMin)
                 tillåtnaRiktningar = new List<int> { 3, 5, 6 };
 
-            else if (x >= 100)
+            else if (citizenX >= xMax)
                 tillåtnaRiktningar = new List<int> { 2, 4, 7 };
 
-            else if (y <= 5)  //ändra
+            else if (citizenY <= yMin)  //ändra
                 tillåtnaRiktningar = new List<int> { 1, 5, 7 };
 
-            else if (y >= 29) //ändra
+            else if (citizenY >= (yMax - 1)) //ändra
                 tillåtnaRiktningar = new List<int> { 0, 4, 6 };
 
             return tillåtnaRiktningar;
@@ -96,9 +98,10 @@ namespace TjuvOchPolis
 
 
         // NY METOD: Flytta personen baserat på riktningen
-        public static void FlyttaPerson(Person person)
+        public static void FlyttaPerson(Person person, int yMin, int yMax, int xMin, int xMax)
         {
-            List<int> tillåtnaRiktningar = HämtaTillåtnaRiktningar(person.XPosition, person.YPosition);
+            List<int> tillåtnaRiktningar = HämtaTillåtnaRiktningar
+                (person.XPosition, person.YPosition, yMin, yMax, xMin, xMax);
 
             if (tillåtnaRiktningar.Count < 8)
             {
@@ -107,14 +110,14 @@ namespace TjuvOchPolis
 
             switch (person.Riktning)
             {
-                case 0: if (person.YPosition > 5) person.YPosition--; break;
-                case 1: if (person.YPosition < 30) person.YPosition++; break;
-                case 2: if (person.XPosition > 1) person.XPosition--; break;
-                case 3: if (person.XPosition < 100) person.XPosition++; break;
-                case 4: if (person.YPosition > 5 && person.XPosition > 1) { person.YPosition--; person.XPosition--; } break;
-                case 5: if (person.YPosition < 30 && person.XPosition < 100) { person.YPosition++; person.XPosition++; } break;
-                case 6: if (person.YPosition > 5 && person.XPosition < 100) { person.YPosition--; person.XPosition++; } break;
-                case 7: if (person.YPosition < 30 && person.XPosition > 1) { person.YPosition++; person.XPosition--; } break;
+                case 0: if (person.YPosition > yMin) person.YPosition--; break;
+                case 1: if (person.YPosition < yMax) person.YPosition++; break;
+                case 2: if (person.XPosition > xMin) person.XPosition--; break;
+                case 3: if (person.XPosition < xMax) person.XPosition++; break;
+                case 4: if (person.YPosition > yMin && person.XPosition > xMin) { person.YPosition--; person.XPosition--; } break;
+                case 5: if (person.YPosition < yMax && person.XPosition < xMax) { person.YPosition++; person.XPosition++; } break;
+                case 6: if (person.YPosition > yMin && person.XPosition < xMax) { person.YPosition--; person.XPosition++; } break;
+                case 7: if (person.YPosition < yMax && person.XPosition > xMin) { person.YPosition++; person.XPosition--; } break;
             }
         }
 
