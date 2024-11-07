@@ -85,7 +85,7 @@ namespace TjuvOchPolis
 
                 case 'r':
 
-                    ResetGame(citizens, messages, status); // Anropa den nya återställningsmetoden
+                    GenerateGame(citizens, messages, status); // Anropa den nya återställningsmetoden
                     break;
 
 
@@ -114,7 +114,7 @@ namespace TjuvOchPolis
         }
 
         // Metod för att återställa spelet vid omstart
-        private static void ResetGame(List<Person> citizens, List<string> messages, int[] status)
+        public static void GenerateGame(List<Person> citizens, List<string> messages, int[] status)
         {
             // Stoppa spelet
             IsGameRunning = false;
