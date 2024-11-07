@@ -32,7 +32,7 @@ namespace TjuvOchPolis
                             prisonor.WalkOfShame = true;
                         }
 
-                        FlyttaPerson(person, 5, 20, 107, 12);
+                        FlyttaPerson(person, 5, 20, 107, 129);
 
                         // MovmentPrison.FlyttaTjuv(person); // Flyttar Tjuv
                         ThiefInfo.ServeTime(prisonor);
