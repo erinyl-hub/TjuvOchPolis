@@ -28,7 +28,7 @@ namespace TjuvOchPolis
         public static char PersonMarkering(Person person)
         {
             if (person is Polis) return 'P';
-            else if (person is Tjuv) return 'T';
+            else if (person is Tjuv) return 'T'; 
             else if (person is Medborgare) return 'C';
 
             return ' ';

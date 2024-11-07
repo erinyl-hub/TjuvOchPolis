@@ -18,23 +18,9 @@ namespace TjuvOchPolis
             Console.WriteLine();
             Console.WriteLine();
 
-            GameTopText.GameTextWelcome();
-            GameTopText.GameTextPlayers();
+            GameTopText.GenerateGame(citizens, messages, status);
 
-            
-
-
-            BuildCity.Border();
-            BuildCity.Bana();
-            BuildCity.BottomBorder();
-
-            
-            NewsFeed.NewsFeedMap();
-            NewsFeed.NewsFeedBorder();
-            NewsFeed.NewsFeedBottom();
-            NewsFeed.StatusText();
-
-
+           
             while (true)
             {
                 GameTopText.GamePlayerPress(citizens, messages, status);
