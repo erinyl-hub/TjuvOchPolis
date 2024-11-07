@@ -51,7 +51,7 @@ namespace TjuvOchPolis
                     else // Om tjuv är fri
                     {
                         status[0] += 1;
-                        FlyttaPerson(person, 5, 30, 1, 100); 
+                        FlyttaPerson(person, 5, 30, 1, 100);
                     }
                 }
                 else
@@ -110,14 +110,14 @@ namespace TjuvOchPolis
 
             switch (person.Riktning)
             {
-                case 0: if (person.YPosition > yMin) person.YPosition--; break;
-                case 1: if (person.YPosition < yMax) person.YPosition++; break;
-                case 2: if (person.XPosition > xMin) person.XPosition--; break;
-                case 3: if (person.XPosition < xMax) person.XPosition++; break;
-                case 4: if (person.YPosition > yMin && person.XPosition > xMin) { person.YPosition--; person.XPosition--; } break;
-                case 5: if (person.YPosition < yMax && person.XPosition < xMax) { person.YPosition++; person.XPosition++; } break;
-                case 6: if (person.YPosition > yMin && person.XPosition < xMax) { person.YPosition--; person.XPosition++; } break;
-                case 7: if (person.YPosition < yMax && person.XPosition > xMin) { person.YPosition++; person.XPosition--; } break;
+                case 0: person.YPosition--; break;
+                case 1: person.YPosition++; break;
+                case 2: person.XPosition--; break;
+                case 3: person.XPosition++; break;
+                case 4: person.YPosition--; person.XPosition--; break;
+                case 5: person.YPosition++; person.XPosition++; break;
+                case 6: person.YPosition--; person.XPosition++; break;
+                case 7: person.YPosition++; person.XPosition--; break;
             }
         }
 
