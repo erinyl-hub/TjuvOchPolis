@@ -55,16 +55,20 @@ namespace TjuvOchPolis
         public static void StatusText()
         {
             int yPosition = 21;
-            int xPosition = 107;
+            int xPosition = 112;
             Console.SetCursorPosition(xPosition, yPosition);
-            Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("   ═══ Status ═══"); Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("═══ Status ═══"); Console.ResetColor();
+
         }
 
         public static void PrintStatus(int[] status)
         {
             int yPosition = 21;
-            int xPosition = 107;
-                           
+            int xPosition = 109;
+
+            
+            
+       
             yPosition++;
             Console.SetCursorPosition(xPosition, yPosition);
             Console.Write($"Fria tjuvar: {status[0]} ");

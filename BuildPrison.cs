@@ -8,22 +8,26 @@ namespace TjuvOchPolis
 {
     internal class BuildPrison
     {
+
+        //Flyttar taket
         public static void BuildPrisonBorder()
         {
-            Console.Write("   ");
+            Console.Write("    ");
             Console.Write("╔");
-            for (int i = 0; i < 21; i++)
-            {              
+            for (int i = 0; i < 24; i++)
+            {
+                
                 Console.Write("═");
             }
             Console.Write("╗");
         }
 
+        //Flyttar golvet
         public static void BuildPrisonBottom()
         {
-            Console.Write("   ");
+            Console.Write("    ");
             Console.Write("╚");
-            for (int i = 0; i < 21; i++)
+            for (int i = 0; i < 24; i++)
             {
                 Console.Write("═");
             }
@@ -35,14 +39,19 @@ namespace TjuvOchPolis
         {
             if(z == 5 || z == 7)
             {
-                Console.Write("═══║");
+                Console.Write("════║");
             }
             else
             {
-                Console.Write("   ║");
+                Console.Write("    ║");
             }
 
-            for (int i = 0; i < 21; i++) 
+
+            
+
+            //fluttar den höra väggen
+
+            for (int i = 0; i < 24; i++) 
             {
                Console.Write(" ");
             }

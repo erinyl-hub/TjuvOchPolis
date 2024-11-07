@@ -25,13 +25,24 @@ namespace TjuvOchPolis
             Console.Write(PersonMarkering(person));
         }
 
-        public static char PersonMarkering(Person person)
+        public static string PersonMarkering(Person person)
         {
-            if (person is Polis) return 'P';
-            else if (person is Tjuv) return 'T'; 
-            else if (person is Medborgare) return 'C';
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-            return ' ';
+            if (person is Polis)
+            {
+                return "👮"; // Emoji för polis
+            }
+            else if (person is Tjuv)
+            {
+                return "🦹"; // Emoji för tjuv
+            }
+            else if (person is Medborgare)
+            {
+                return "👤"; // Emoji för medborgare
+            }
+
+            return " "; // Om inget av ovanstående matchar
         }
     }
 }
