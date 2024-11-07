@@ -32,7 +32,7 @@ namespace TjuvOchPolis
                             prisonor.WalkOfShame = true;
                         }
 
-                        FlyttaPerson(person, 5, 20, 106, 126);
+                        FlyttaPerson(person, 5, 20, 107, 12);
 
                         // MovmentPrison.FlyttaTjuv(person); // Flyttar Tjuv
                         ThiefInfo.ServeTime(prisonor);
@@ -45,12 +45,12 @@ namespace TjuvOchPolis
                     else // Om tjuv är fri
                     {
                         status[0] += 1;
-                        FlyttaPerson(person, 5, 30, 1, 100);
+                        FlyttaPerson(person, 5, 30, 1, 99);
                     }
                 }
                 else
                 {
-                    FlyttaPerson(person, 5, 30, 1, 100); //Flyttar medborgare
+                    FlyttaPerson(person, 5, 30, 1, 99); //Flyttar medborgare
                 }
 
                 Console.SetCursorPosition(person.XPosition, person.YPosition);

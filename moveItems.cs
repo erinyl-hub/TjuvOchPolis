@@ -56,7 +56,7 @@ namespace TjuvOchPolis
                             goods = "nyckel";
                             medborgare.Belongings.Key--;
                             tjuv.StolenGoods.Key++;
-                            tjuv.SentenceTime += 500;
+                            tjuv.SentenceTime += 30;
                             NewsFeed.AddMessages(messages, tjuv, medborgare, goods);
                             status[2]++;
 
@@ -65,7 +65,7 @@ namespace TjuvOchPolis
                             goods = "mobil";
                             medborgare.Belongings.Mobil--;
                             tjuv.StolenGoods.Mobil++;
-                            tjuv.SentenceTime += 500;
+                            tjuv.SentenceTime += 30;
                             NewsFeed.AddMessages(messages, tjuv, medborgare, goods);
                             status[2]++;
                         
@@ -74,7 +74,7 @@ namespace TjuvOchPolis
                             goods = "plånbok";
                             medborgare.Belongings.Money--;
                             tjuv.StolenGoods.Money++;
-                            tjuv.SentenceTime += 500;
+                            tjuv.SentenceTime += 30;
                             NewsFeed.AddMessages(messages, tjuv, medborgare, goods);
                             status[2]++;
                         
@@ -83,7 +83,7 @@ namespace TjuvOchPolis
                             goods = "klocka";
                             medborgare.Belongings.Watch--;
                             tjuv.StolenGoods.Watch++;
-                            tjuv.SentenceTime += 500;
+                            tjuv.SentenceTime += 30;
                             NewsFeed.AddMessages(messages, tjuv, medborgare, goods);
                             status[2]++;
                         

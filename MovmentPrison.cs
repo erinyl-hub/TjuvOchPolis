@@ -29,7 +29,7 @@ namespace TjuvOchPolis
                     int polisY = tjuv.YPosition - 1;
                     Console.SetCursorPosition(tjuv.XPosition, polisY);
                     Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.Write("👮");
+                    Console.Write("🚔");
                     System.Threading.Thread.Sleep(150);
                     Console.SetCursorPosition(tjuv.XPosition, polisY);
                     if (i < 2)
@@ -45,8 +45,10 @@ namespace TjuvOchPolis
 
                 if (i == 2)
                 {
-                    System.Threading.Thread.Sleep(500);
+                    System.Threading.Thread.Sleep(800);
                     OppenDoor((tjuv.XPosition + 1), tjuv.YPosition);
+                    
+
                 }
 
                 if(i == 6)  
@@ -76,32 +78,32 @@ namespace TjuvOchPolis
         {
 
             tjuv.YPosition = 11;
-            tjuv.XPosition = 107;
+            tjuv.XPosition = 108;
 
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 10; i++)
             {
                 Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("T");
+                Console.Write("🦹");
 
                 if (i == 1)
                 {
-                    System.Threading.Thread.Sleep(500);
+                    System.Threading.Thread.Sleep(800);
                     OppenDoor((tjuv.XPosition - 1), tjuv.YPosition);
                 }
 
-                if (i == 4)
+                if (i == 5)
                 {
                     System.Threading.Thread.Sleep(500);
-                    CloseDoor((tjuv.XPosition + 2), tjuv.YPosition);
+                    CloseDoor((tjuv.XPosition + 3), tjuv.YPosition);
                     System.Threading.Thread.Sleep(500);
                     OppenDoor((tjuv.XPosition - 2), tjuv.YPosition);
                 }
 
-                if (i == 7)
+                if (i == 9)
                 {
                     System.Threading.Thread.Sleep(500);
-                    CloseDoor((tjuv.XPosition + 1), tjuv.YPosition);
+                    CloseDoor((tjuv.XPosition + 2), tjuv.YPosition);
                     System.Threading.Thread.Sleep(200);
                 }
 
