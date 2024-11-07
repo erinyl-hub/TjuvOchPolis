@@ -11,7 +11,7 @@ namespace TjuvOchPolis
         public int XPosition { get; set; }
         public int YPosition { get; set; }
         public string Name { get; set; }
-        //public List<>| Inventory { get; set; }
+        
         public int Riktning { get; set; }
         public Person(int xposition, int yposition, string name, int riktning)
         {
@@ -27,13 +27,11 @@ namespace TjuvOchPolis
     {       
         public Inventory SeizedGoods { get; set; }
 
-
         public Polis(Inventory seizedGoods, int xposition, int yposition, string name, int riktning) : base (xposition, yposition, name, riktning)
         {
             SeizedGoods = seizedGoods; 
             
         }
-
     }
 
     internal class Medborgare : Person
@@ -45,7 +43,6 @@ namespace TjuvOchPolis
         {          
             Belongings = belongings;
         }
-
     }
 
     internal class Tjuv : Person
@@ -56,7 +53,6 @@ namespace TjuvOchPolis
 
         public int SentenceTime { get; set; }
 
-
         public Tjuv(Inventory stolenGoods, int xposition, int yposition, string name, int riktning, bool fri) : base(xposition, yposition, name, riktning)
         {
             WalkOfShame = false;
@@ -64,6 +60,5 @@ namespace TjuvOchPolis
             Fri = fri;
             SentenceTime = 0;
         }
-
     }    
 }

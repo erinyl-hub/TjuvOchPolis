@@ -12,11 +12,9 @@ namespace TjuvOchPolis
     internal class NewsFeed
     {
         public static void AddMessages(List<string> messages, Tjuv tjuv, Medborgare medborgare, string goods)
-        {
-            
+        {           
             string message = $"{tjuv.Name} stal en {goods} ifrån {medborgare.Name}";
             messages.Add(message);
-
         }
 
         public static void PoliceMsg(List<string> messages, Polis polis1, Polis polis2)
@@ -34,12 +32,9 @@ namespace TjuvOchPolis
 
         public static void WriteMessages(List<string> messages)
         {
-
-
             int startIndex = Math.Max(messages.Count - 5, 0);
             int yPosition = 33;
             int messageWidth = 62;
-
 
             for (int i = 0; i < 5; i++)
             {
@@ -47,17 +42,12 @@ namespace TjuvOchPolis
                 Console.Write(new string(' ', messageWidth));
             }
 
-
             for (int i = messages.Count - 1; i >= startIndex; i--)
             {
                 Console.SetCursorPosition(23, yPosition);
                 Console.WriteLine($"{i} - {messages[i]}");
                 yPosition++;
-
-
             }
-
-
         }
 
 
@@ -68,20 +58,13 @@ namespace TjuvOchPolis
             int xPosition = 107;
             Console.SetCursorPosition(xPosition, yPosition);
             Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("   ═══ Status ═══"); Console.ResetColor();
-
         }
-
-
-
 
         public static void PrintStatus(int[] status)
         {
             int yPosition = 21;
             int xPosition = 107;
-
-            
-            
-       
+                           
             yPosition++;
             Console.SetCursorPosition(xPosition, yPosition);
             Console.Write($"Fria tjuvar: {status[0]} ");
@@ -95,7 +78,6 @@ namespace TjuvOchPolis
             Console.SetCursorPosition(xPosition, yPosition);
             Console.Write($"Munkfika!: {status[3]}");
             yPosition++;
-
         }
 
 
@@ -106,31 +88,19 @@ namespace TjuvOchPolis
             int StartOffset = 14;
             int yPosition = 31;
 
-
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(44, yPosition);
             Console.WriteLine("═══ NewsFeed ═══");
             Console.ResetColor();
 
-
-
             Console.Write(new string(' ', StartOffset));
             Console.Write("╔");
             for (int i = 0; i < x; i++)
             {
-
                 Console.Write("═");
-
             }
             Console.Write("╗");
-
-
-
-
         }
-
-
-
 
         public static void NewsFeedMap()
         {
@@ -149,12 +119,10 @@ namespace TjuvOchPolis
                     if (inneBana == false)
                     {
                         Console.Write(" ");
-
                     }
                 }
                 Console.Write("║");
                 Console.WriteLine();
-
             }
         }
 
@@ -164,7 +132,6 @@ namespace TjuvOchPolis
             int Yposition = 39;
             int StartPosition = 0;
 
-
             Console.SetCursorPosition(14, Yposition);
 
             Console.Write(new string(' ', StartPosition));
@@ -172,16 +139,9 @@ namespace TjuvOchPolis
             for (int i = 0; i < x; i++) 
             {
                 Console.Write("═");
-
             }
             Console.Write("╝");
         }
-
-
-
-
     }
-
-
 }
 

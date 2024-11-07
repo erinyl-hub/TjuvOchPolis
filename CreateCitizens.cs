@@ -42,7 +42,6 @@ namespace TjuvOchPolis
                 string name = namnlista[i];
                 int movement = Random.Shared.Next(0, 7);
 
-
                 if (typ == typeof(Polis))
                 {
                     Inventory inventory = new Inventory(0, 0, 0, 0);
@@ -75,8 +74,5 @@ namespace TjuvOchPolis
             }
             return true;
         }
-
-
-
     }
 }

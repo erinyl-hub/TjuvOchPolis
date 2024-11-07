@@ -31,14 +31,12 @@ namespace TjuvOchPolis
             Console.WriteLine("╝"); 
         }
 
-
         public static void Bana()
         {
             int x = 100;
             int y = 25;
 
             BuildPrison.BuildPrisonBorder();
-
             Console.WriteLine();
 
             for (int z = 0; z < y; z++)
@@ -64,16 +62,8 @@ namespace TjuvOchPolis
                 {
                     BuildPrison.BuildPrisonBottom();
                 }
-
-
-
-                    
-                
-                
-                Console.WriteLine();
-               
-            }
-            
+               Console.WriteLine();              
+            }      
         }
     }
 }

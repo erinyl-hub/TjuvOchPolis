@@ -31,13 +31,10 @@ namespace TjuvOchPolis
                 inventory.Add(3);
             }
             return inventory;
-
-
         }
 
         public static void ThiefCitizenItems(Tjuv tjuv, Medborgare medborgare, List<string> messages, int[] status)
         {
-
             List<int> inventory = CheckInventory(medborgare);
 
             if (inventory.Count == 0)
@@ -46,7 +43,6 @@ namespace TjuvOchPolis
             }
             else
             {
-
                 int rnd = Random.Shared.Next(0, inventory.Count);
 
                 int choice = inventory[rnd];
@@ -56,9 +52,7 @@ namespace TjuvOchPolis
                 switch (rnd)
                 {
 
-                    case 0:
-                        
-                        
+                    case 0:                                             
                             goods = "nyckel";
                             medborgare.Belongings.Key--;
                             tjuv.StolenGoods.Key++;
@@ -66,12 +60,8 @@ namespace TjuvOchPolis
                             NewsFeed.AddMessages(messages, tjuv, medborgare, goods);
                             status[2]++;
 
-                        
-
                         break;
-                    case 1:
-                        
-                        
+                    case 1:                                              
                             goods = "mobil";
                             medborgare.Belongings.Mobil--;
                             tjuv.StolenGoods.Mobil++;
@@ -80,8 +70,7 @@ namespace TjuvOchPolis
                             status[2]++;
                         
                         break;
-                    case 2:
-                        
+                    case 2:                       
                             goods = "plånbok";
                             medborgare.Belongings.Money--;
                             tjuv.StolenGoods.Money++;
@@ -90,8 +79,7 @@ namespace TjuvOchPolis
                             status[2]++;
                         
                         break;
-                    case 3:
-                        
+                    case 3:                       
                             goods = "klocka";
                             medborgare.Belongings.Watch--;
                             tjuv.StolenGoods.Watch++;
@@ -122,9 +110,7 @@ namespace TjuvOchPolis
                 tjuv.StolenGoods.Mobil = 0;
                 tjuv.StolenGoods.Money = 0;
                 tjuv.StolenGoods.Watch = 0;
-                tjuv.Fri = false;
-
-                
+                tjuv.Fri = false;                
             }
             return;
         }

@@ -11,7 +11,6 @@ namespace TjuvOchPolis
         public static bool IsGameRunning { get; set; } = false; 
         public static bool IsGamePaused { get; set; } = false;
 
-
         public static void GameTextWelcome()
         {
             Console.Clear();
@@ -50,8 +49,6 @@ namespace TjuvOchPolis
 
             Console.WriteLine();
 
-
-
             switch (input)
             {
                 case 's':
@@ -88,7 +85,6 @@ namespace TjuvOchPolis
                     GenerateGame(citizens, messages, status); // Anropa den nya återställningsmetoden
                     break;
 
-
                 default:
                     break;
             }
@@ -101,14 +97,12 @@ namespace TjuvOchPolis
             while (IsGameRunning)
             {
                 if (!IsGamePaused)
-                {
-                    
+                {                 
                     Movment.Rörelse(citizens, messages, status);
 
                     NewsFeed.WriteMessages(messages);
                     NewsFeed.PrintStatus(status);
                 }
-
                 Thread.Sleep(150); 
             }
         }

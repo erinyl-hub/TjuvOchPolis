@@ -11,18 +11,14 @@ namespace TjuvOchPolis
     {
         public static void Rörelse(List<Person> citizens, List<string> messages, int[] status)
         {
-
             Meeting.PersonMeeting(citizens, messages, status);
 
             status[0] = 0;
             status[1] = 0;
             foreach (Person person in citizens)
             {
-
-
                 Console.SetCursorPosition(person.XPosition, person.YPosition);
                 Console.Write(" ");
-
 
                 if (person is Tjuv)
                 {
@@ -45,8 +41,6 @@ namespace TjuvOchPolis
                             MovmentPrison.PrisonExit(prisonor);
                         }
 
-
-
                     }
                     else // Om tjuv är fri
                     {
@@ -58,9 +52,6 @@ namespace TjuvOchPolis
                 {
                     FlyttaPerson(person, 5, 30, 1, 100); //Flyttar medborgare
                 }
-
-
-
 
                 Console.SetCursorPosition(person.XPosition, person.YPosition);
                 AddColor.SkrivUtPersonMedFärg(person);

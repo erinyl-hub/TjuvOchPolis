@@ -19,18 +19,12 @@ namespace TjuvOchPolis
             Console.WriteLine();
 
             GameTopText.GenerateGame(citizens, messages, status);
-
-           
+          
             while (true)
             {
                 GameTopText.GamePlayerPress(citizens, messages, status);
 
             }
-
-            
-
-           
-
         }
     }
 }

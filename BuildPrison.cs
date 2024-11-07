@@ -13,13 +13,10 @@ namespace TjuvOchPolis
             Console.Write("   ");
             Console.Write("╔");
             for (int i = 0; i < 21; i++)
-            {
-                
+            {              
                 Console.Write("═");
-
             }
             Console.Write("╗");
-
         }
 
         public static void BuildPrisonBottom()
@@ -28,12 +25,9 @@ namespace TjuvOchPolis
             Console.Write("╚");
             for (int i = 0; i < 21; i++)
             {
-
                 Console.Write("═");
-
             }
-            Console.Write("╝");
-           
+            Console.Write("╝");           
         }
 
         public static void BuildPrisonWalls(int z)
@@ -47,11 +41,6 @@ namespace TjuvOchPolis
             {
                 Console.Write("   ║");
             }
-
-
-            
-
-
 
             for (int i = 0; i < 21; i++) 
             {
