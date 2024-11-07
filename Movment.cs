@@ -74,7 +74,7 @@ namespace TjuvOchPolis
             if (x <= 1)
                 tillåtnaRiktningar = new List<int> { 3, 5, 6 };
 
-            else if (x >= 100)
+            else if (x >= 99)
                 tillåtnaRiktningar = new List<int> { 2, 4, 7 };
 
             else if (y <= 5)  //ändra

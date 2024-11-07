@@ -14,25 +14,25 @@ namespace TjuvOchPolis
         public static void PrisonEnter(Tjuv tjuv)
         {       
             tjuv.YPosition = 11;
-            tjuv.XPosition = 97;
+            tjuv.XPosition = 96;
             
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < 11; i++)
             {
                               
                 tjuv.XPosition ++;            
                 Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("T");
+                Console.Write("🦹");
 
 
 
 
-                if (i < 3)
+                if (i < 2)
                 {
                     int polisY = tjuv.YPosition - 1;
                     Console.SetCursorPosition(tjuv.XPosition, polisY);
                     Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.Write("P");
+                    Console.Write("👮");
                     System.Threading.Thread.Sleep(150);
                     Console.SetCursorPosition(tjuv.XPosition, polisY);
                     if (i < 2)
@@ -56,7 +56,7 @@ namespace TjuvOchPolis
                     OppenDoor((tjuv.XPosition + 1), tjuv.YPosition);                  
                 }
 
-                if(i == 5)  
+                if(i == 6)  
                 {
                     System.Threading.Thread.Sleep(500);
                     CloseDoor((tjuv.XPosition - 2), tjuv.YPosition);
@@ -65,7 +65,7 @@ namespace TjuvOchPolis
                 }
                
 
-                if (i == 8)
+                if (i == 10)
                 {
                     System.Threading.Thread.Sleep(500);
                     CloseDoor((tjuv.XPosition - 1), tjuv.YPosition);
