@@ -27,7 +27,7 @@ namespace TjuvOchPolis
 
 
 
-                if (i < 2)
+                if (i < 3)
                 {
                     int polisY = tjuv.YPosition - 1;
                     Console.SetCursorPosition(tjuv.XPosition, polisY);
@@ -87,7 +87,7 @@ namespace TjuvOchPolis
                 Console.SetCursorPosition(tjuv.XPosition, tjuv.YPosition);
                 Console.Write(" ");
             }
-            Console.SetCursorPosition((tjuv.XPosition - 6), (tjuv.YPosition - 1));
+            Console.SetCursorPosition((tjuv.XPosition - 7), (tjuv.YPosition - 1));
             Console.Write(" ");
 
         }
