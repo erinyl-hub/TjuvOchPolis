@@ -41,7 +41,7 @@ namespace TjuvOchPolis
             {
                 return;
             }
-            else if (inventory.Count > 0) 
+            else 
             {
                 int rnd = Random.Shared.Next(0, inventory.Count);
 
@@ -49,7 +49,7 @@ namespace TjuvOchPolis
 
                 string goods;
 
-                switch (rnd)
+                switch (choice)
                 {
 
                     case 0:                                             
