@@ -41,7 +41,7 @@ namespace TjuvOchPolis
             {
                 return;
             }
-            else
+            else if (inventory.Count > 0) 
             {
                 int rnd = Random.Shared.Next(0, inventory.Count);
 
@@ -97,7 +97,7 @@ namespace TjuvOchPolis
         }
 
         
-        public static void PoliceThiefItems(Tjuv tjuv, Polis polis)
+        public static void PoliceThiefItems(Tjuv tjuv, Polis polis, List<string> messages)
         {           
             if (tjuv.StolenGoods.Key > 0 || tjuv.StolenGoods.Watch > 0 || tjuv.StolenGoods.Money > 0 || tjuv.StolenGoods.Mobil > 0)
             {               
@@ -110,7 +110,9 @@ namespace TjuvOchPolis
                 tjuv.StolenGoods.Mobil = 0;
                 tjuv.StolenGoods.Money = 0;
                 tjuv.StolenGoods.Watch = 0;
-                tjuv.Fri = false;                
+                tjuv.Fri = false;
+
+                NewsFeed.PoliceCatchThiefMsg(messages, polis, tjuv);
             }
             return;
         }

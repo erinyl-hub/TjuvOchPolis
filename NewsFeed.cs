@@ -38,13 +38,13 @@ namespace TjuvOchPolis
 
             for (int i = 0; i < 5; i++)
             {
-                Console.SetCursorPosition(23, yPosition + i);
+                Console.SetCursorPosition(21, yPosition + i);
                 Console.Write(new string(' ', messageWidth));
             }
 
             for (int i = messages.Count - 1; i >= startIndex; i--)
             {
-                Console.SetCursorPosition(23, yPosition);
+                Console.SetCursorPosition(21, yPosition);
                 Console.WriteLine($"{i} - {messages[i]}");
                 yPosition++;
             }

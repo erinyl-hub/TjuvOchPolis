@@ -59,5 +59,22 @@ namespace TjuvOchPolis
             }
             Console.Write("║");
         }
+
+        public static void FixPrisonWall()
+        {
+
+            WriteWall(107, 4);
+            WriteWall(107, 20);
+        }
+
+        public static void WriteWall(int xPos, int yPos)
+        {
+            Console.SetCursorPosition(xPos, yPos);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write("════════════════════════");
+            Console.ResetColor();
+
+        }
+        
     }
 }
