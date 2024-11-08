@@ -65,5 +65,23 @@ namespace TjuvOchPolis
                Console.WriteLine();              
             }      
         }
+
+        public static void FixWall()
+        {
+            WriteWall(2, 4, 99);
+            WriteWall(2, 30, 99);
+
+            WriteWall(107, 4, 24);
+            WriteWall(107, 20, 24);
+        }
+
+        public static void WriteWall(int xPos, int yPos, int length)
+        {
+            Console.SetCursorPosition(xPos, yPos);
+            for (int i = 0; i < length; i++)
+            {
+                Console.Write("═");
+            }           
+        }
     }
 }
