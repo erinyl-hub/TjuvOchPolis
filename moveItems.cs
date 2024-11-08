@@ -93,6 +93,10 @@ namespace TjuvOchPolis
 
                         break;
                 }
+                if (medborgare.Belongings.Money != 1 && medborgare.Belongings.Watch != 1 && medborgare.Belongings.Key != 1 && medborgare.Belongings.Mobil != 1)
+                {
+                    NewsFeed.PoorMsg(messages, medborgare);
+                }
             }
         }
 
