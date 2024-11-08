@@ -57,7 +57,7 @@ namespace TjuvOchPolis
             int yPosition = 21;
             int xPosition = 112;
             Console.SetCursorPosition(xPosition, yPosition);
-            Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("═══ Status ═══"); Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.White; Console.Write("═══ Status ═══"); Console.ResetColor();
 
         }
 
@@ -92,12 +92,13 @@ namespace TjuvOchPolis
             int StartOffset = 14;
             int yPosition = 31;
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(44, yPosition);
             Console.WriteLine("═══ NewsFeed ═══");
             Console.ResetColor();
 
             Console.Write(new string(' ', StartOffset));
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write("╔");
             for (int i = 0; i < x; i++)
             {

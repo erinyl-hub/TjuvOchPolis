@@ -12,6 +12,7 @@ namespace TjuvOchPolis
         {
 
             int x = 100;
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write("╔");
             for (int i = 0; i < x; i++)
             {
@@ -22,7 +23,9 @@ namespace TjuvOchPolis
 
         public static void BottomBorder()
         {
+
             int x = 100;
+
             Console.Write("╚");
             for (int i = 0; i < x; i++)
             {
@@ -39,8 +42,11 @@ namespace TjuvOchPolis
             BuildPrison.BuildPrisonBorder();
             Console.WriteLine();
 
+            
+
             for (int z = 0; z < y; z++)
             {
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.Write("║"); //Vänster vägg av banan
 
                 for (int f = 0; f < x; f++)

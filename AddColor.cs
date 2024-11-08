@@ -39,7 +39,7 @@ namespace TjuvOchPolis
             }
             else if (person is Medborgare)
             {
-                return "👤"; // Emoji för medborgare
+                return "🧝"; // Emoji för medborgare
             }
 
             return " "; // Om inget av ovanstående matchar

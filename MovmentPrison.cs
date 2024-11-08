@@ -120,6 +120,7 @@ namespace TjuvOchPolis
         {
             Console.SetCursorPosition(doorX, doorY);
             Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("║");
         }
 
