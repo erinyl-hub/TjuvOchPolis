@@ -39,10 +39,12 @@ namespace TjuvOchPolis
         {
             if(z == 5 || z == 7)
             {
+
                 Console.Write("════║");
             }
             else
             {
+                
                 Console.Write("    ║");
             }
 

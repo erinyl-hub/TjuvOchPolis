@@ -14,11 +14,12 @@ namespace TjuvOchPolis
         public static void GameTextWelcome()
         {
             Console.Clear();
+            
             string welcomeMessage = "══════════ Välkommna till spelet Tjuv & Polis! ══════════";
 
             int consoleWidth = Console.WindowWidth; // Hämta konsolens bredd
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.White;
 
             // Centrera och skriv ut välkomstmeddelandet
             Console.WriteLine(welcomeMessage.PadLeft((consoleWidth + welcomeMessage.Length) / 2));
