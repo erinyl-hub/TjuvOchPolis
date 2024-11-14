@@ -49,7 +49,7 @@ namespace TjuvOchPolis
 
                 string goods;
 
-                switch (rnd)
+                switch (choice)
                 {
 
                     case 0:                                             
