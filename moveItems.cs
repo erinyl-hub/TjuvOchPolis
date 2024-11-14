@@ -41,7 +41,7 @@ namespace TjuvOchPolis
             {
                 return;
             }
-            else
+            else 
             {
                 int rnd = Random.Shared.Next(0, inventory.Count);
 
@@ -93,11 +93,15 @@ namespace TjuvOchPolis
 
                         break;
                 }
+                if (medborgare.Belongings.Money != 1 && medborgare.Belongings.Watch != 1 && medborgare.Belongings.Key != 1 && medborgare.Belongings.Mobil != 1)
+                {
+                    NewsFeed.PoorMsg(messages, medborgare);
+                }
             }
         }
 
         
-        public static void PoliceThiefItems(Tjuv tjuv, Polis polis)
+        public static void PoliceThiefItems(Tjuv tjuv, Polis polis, List<string> messages)
         {           
             if (tjuv.StolenGoods.Key > 0 || tjuv.StolenGoods.Watch > 0 || tjuv.StolenGoods.Money > 0 || tjuv.StolenGoods.Mobil > 0)
             {               
@@ -110,7 +114,9 @@ namespace TjuvOchPolis
                 tjuv.StolenGoods.Mobil = 0;
                 tjuv.StolenGoods.Money = 0;
                 tjuv.StolenGoods.Watch = 0;
-                tjuv.Fri = false;                
+                tjuv.Fri = false;
+
+                NewsFeed.PoliceCatchThiefMsg(messages, polis, tjuv);
             }
             return;
         }

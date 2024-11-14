@@ -45,9 +45,10 @@ namespace TjuvOchPolis
 
                 if (i == 2)
                 {
-                    System.Threading.Thread.Sleep(800);
-                    OppenDoor((tjuv.XPosition + 1), tjuv.YPosition);
-                    
+                    System.Threading.Thread.Sleep(500);
+                    OppenDoor((tjuv.XPosition + 2), tjuv.YPosition);
+                    System.Threading.Thread.Sleep(200);
+
 
                 }
 
@@ -56,7 +57,8 @@ namespace TjuvOchPolis
                     System.Threading.Thread.Sleep(500);
                     CloseDoor((tjuv.XPosition - 2), tjuv.YPosition);
                     System.Threading.Thread.Sleep(500);
-                    OppenDoor((tjuv.XPosition + 2), tjuv.YPosition);
+                    OppenDoor((tjuv.XPosition + 3), tjuv.YPosition);
+                    System.Threading.Thread.Sleep(200);
                 }
                
 

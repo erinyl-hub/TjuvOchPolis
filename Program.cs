@@ -7,7 +7,8 @@ namespace TjuvOchPolis
     internal class Program
     {
         static void Main(string[] args)
-        {         
+        {
+            Console.Title = "Thieves and Cops: Sleepless City";
             List<Person> citizens = new List<Person>();
             CreateCitizens.AddCitizens(citizens);
             List<string> messages = new List<string>();

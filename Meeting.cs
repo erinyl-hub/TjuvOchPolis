@@ -38,8 +38,7 @@ namespace TjuvOchPolis
                         {
                             Tjuv thief = (Tjuv)person;
                             Polis polis = (Polis)personMeeting;
-                            NewsFeed.PoliceCatchThiefMsg(messages, polis, thief);
-                            MoveItems.PoliceThiefItems(thief, polis);
+                            MoveItems.PoliceThiefItems(thief, polis, messages);
                             
                         }
 

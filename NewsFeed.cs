@@ -28,6 +28,12 @@ namespace TjuvOchPolis
             string catchMsg = $"Polis {polis.Name} arresterade tjuven {tjuv.Name}";
             messages.Add(catchMsg);
         }
+        
+        public static void PoorMsg(List<string> messages, Medborgare medborgare)
+        {
+            string catchMsg = $"{medborgare.Name} har inget kvar, och är nu fattig.";
+            messages.Add(catchMsg);
+        }
 
 
         public static void WriteMessages(List<string> messages)
@@ -38,13 +44,13 @@ namespace TjuvOchPolis
 
             for (int i = 0; i < 5; i++)
             {
-                Console.SetCursorPosition(23, yPosition + i);
+                Console.SetCursorPosition(21, yPosition + i);
                 Console.Write(new string(' ', messageWidth));
             }
 
             for (int i = messages.Count - 1; i >= startIndex; i--)
             {
-                Console.SetCursorPosition(23, yPosition);
+                Console.SetCursorPosition(21, yPosition);
                 Console.WriteLine($"{i} - {messages[i]}");
                 yPosition++;
             }

@@ -56,7 +56,8 @@ namespace TjuvOchPolis
                 Console.SetCursorPosition(person.XPosition, person.YPosition);
                 AddColor.SkrivUtPersonMedFärg(person);
                 Console.ResetColor();
-                BuildCity.FixWall();
+                BuildCity.FixCityWall();
+                BuildPrison.FixPrisonWall();
             }
         }
 
